@@ -39,13 +39,13 @@ body {
 @font-face {
   font-display: swap;
   font-family: "LA-LUXE";
-  src: url("fonts/LA\ LUXE.woff") format("woff");
+  src: url("../fonts/LA\ LUXE.woff") format("woff");
 }
 
 @font-face {
   font-display: swap;
   font-family: "AdornScript";
-  src: url("fonts/AdornStoryScript.woff") format("woff");
+  src: url("../fonts/AdornStoryScript.woff") format("woff");
 }
 
 a {

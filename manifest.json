@@ -11,13 +11,13 @@
     "icons": [
     
     {
-      "src": "../assets/images/maskable_icon2.png",
+      "src": "img/masks/maskable_icon2.png",
       "sizes": "196x196",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "../assets/images/maskable_icon1.png",
+      "src": "img/masks/maskable_icon1.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
