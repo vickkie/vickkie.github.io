@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
   font-family: "cirka";
-  src: url("../../css/fonts/NeueuHaas/NeueHaasDisplayMediu.woff") format("woff");
+  src: url("fonts/NeueuHaas/NeueHaasDisplayMediu.woff") format("woff");
 }
 
 .title-uzi {
