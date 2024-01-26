@@ -26,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-  /* overflow-x: hidden; */
+  /* transition: all 0.3s ease; */
   height: max-content;
   overflow: hidden;
 }
@@ -39,7 +39,8 @@ body {
 @font-face {
   font-display: swap;
   font-family: "LA-LUXE";
-  src: url("../fonts/LA\ LUXE.woff") format("woff");
+
+  src: url("../fonts/Pavelt-VG24B.woff") format("woff");
 }
 
 @font-face {
@@ -589,18 +590,67 @@ main {
 }
 .designer-desc {
   padding: 0px 40px;
-  grid-row: 2/5;
+  grid-row: 2/3;
   grid-column: auto;
 }
 .dev-header {
   font-size: 3rem;
-  text-align: center;
+  /* text-align: center; */
   font-family: inherit;
 }
 .dev-subheader {
   font-size: 2rem;
   text-align: center;
   font-family: inherit;
+}
+
+.work-areas {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  min-height: 40vh;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+}
+.work-areas span:first-child {
+  text-align: center;
+  font-size: clamp(2rem, 1.2rem, 1rem);
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.proof-experience {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 40px;
+  position: relative;
+  align-items: center;
+}
+
+.years-xp {
+  display: flex;
+  flex-direction: column;
+}
+.xp-head {
+  font-size: 13vw;
+  text-align: center;
+}
+
+.xp-footer {
+  font-size: 2vw;
+  text-align: center;
+}
+
+.projects-xp {
+  display: flex;
+  flex-direction: column;
+}
+.more-xp {
+  display: flex;
+  flex-direction: column;
 }
 
 .tomato {
@@ -685,7 +735,7 @@ main {
     transform: scale(1.5);
   }
   body {
-    --hero-font: 11vw;
+    --hero-font: 8vw;
     --hero-sub-font: 0.7rem;
   }
   .l3__left svg {
@@ -694,9 +744,10 @@ main {
   .content__l3 {
     grid-template-columns: 1fr 4fr;
   }
+
   .l4__right .div {
-    width: 98%;
-    height: 54%;
+    width: 54%;
+    height: 73%;
   }
   .content__l1 {
     display: grid;
@@ -704,6 +755,9 @@ main {
   }
   .l1__right {
     font-size: var(--hero-sub-font);
+  }
+  .dev-header {
+    text-align: center;
   }
 }
 
@@ -1003,22 +1057,22 @@ main {
     "copyright year available";
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 30px 1fr 30px;
+  justify-items: center;
 }
 
-.footer-author {
+/* .footer-author {
   grid-area: uzitrake;
+  font-display: swap;
   font-family: inherit;
-  font-size: 13vw;
+  font-size: 120px;
   margin: 0;
   font-family: inherit;
   font-weight: 100;
-  justify-self: center;
-  align-self: center;
   text-transform: uppercase;
   position: relative;
   color: var(--color-black);
   transform: translateZ(0);
-}
+} */
 .copyright-footer {
   grid-area: copyright;
   font-size: 0.7rem;
@@ -1114,3 +1168,7 @@ main {
   object-fit: cover;
   object-position: center center;
 }
+
+/* .line-top-border{
+
+} */
