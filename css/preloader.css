@@ -147,13 +147,13 @@
   grid-area: uzitrake;
   font-display: swap;
   font-family: inherit;
-  font-size: 120px;
+  font-size: 12vw;
   margin: 0;
   font-family: inherit;
   font-weight: 100;
   text-transform: uppercase;
   position: relative;
-  color: var(--color-black);
+  color: var(--stick-black);
   transform: translateZ(0);
   cursor: pointer;
 }

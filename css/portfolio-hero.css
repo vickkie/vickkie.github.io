@@ -17,12 +17,15 @@ body {
   --color-black: #000000;
   --color-white: #ffffff;
   --color-bg: #f6efe5;
+  --stick-black: #000;
   --hero-font: 8vw;
   --hero-sub-font: 1.3rem;
+  --font-1: cirka;
+  --font-2: LA-LUXE;
 
   color: var(--color-black);
   background-color: var(--color-bg);
-  font-family: cirka, sans-serif;
+  font-family: var(--font-1), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
@@ -39,7 +42,6 @@ body {
 @font-face {
   font-display: swap;
   font-family: "LA-LUXE";
-
   src: url("../fonts/Pavelt-VG24B.woff") format("woff");
 }
 
@@ -173,7 +175,7 @@ main {
 .frame__author {
   margin: 0;
   grid-area: author;
-  font-family: cirka;
+  font-family: var(--font-1);
   font-size: 0.9rem;
 }
 
@@ -195,7 +197,7 @@ main {
 .frame__contact {
   grid-area: contactme;
   justify-self: end;
-  font-family: cirka;
+  font-family: var(--font-1);
   font-size: 0.9rem;
   display: flex;
 }
@@ -272,7 +274,7 @@ main {
   justify-content: flex-end;
   display: flex;
   align-items: center;
-  font-family: LA-LUXE;
+  font-family: var(--font-2);
   padding-right: 30px;
 }
 .l1__right {
@@ -308,7 +310,7 @@ main {
   align-items: center;
   display: grid;
   justify-content: start;
-  font-family: LA-LUXE;
+  font-family: var(--font-2);
 }
 .rotatework {
   display: flex;
@@ -354,7 +356,7 @@ main {
 .l3__right {
   display: flex;
   font-size: var(--hero-sub-font);
-  font-family: cirka;
+  font-family: var(--font-1);
   text-align: left;
   word-break: break-word;
   flex-direction: column;
@@ -388,7 +390,7 @@ main {
   font-size: var(--hero-font);
   align-items: center;
   text-align: left;
-  font-family: LA-LUXE;
+  font-family: var(--font-2);
   display: flex;
   justify-content: end;
   padding: 0 30px;
@@ -1079,6 +1081,7 @@ main {
   display: grid;
   justify-content: center;
   align-items: center;
+  color: var(--stick-black);
 }
 .year-footer {
   grid-area: year;
@@ -1086,10 +1089,12 @@ main {
   display: grid;
   justify-content: center;
   align-items: center;
+  color: var(--stick-black);
 }
 .footer-author svg {
   height: 13vw;
   width: 6vw;
+  color: var(--stick-black);
 }
 .available-y {
   grid-area: available;
@@ -1097,6 +1102,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--stick-black);
 }
 
 .footer-low-line {

@@ -29,6 +29,10 @@ export class Item {
         // image
         this.DOM.imgWrap = this.DOM.el.querySelector('.item__imgwrap');
         this.DOM.img = this.DOM.imgWrap.querySelector('.item__img');
+
+        //main image in case study
+
+        
         
         // circle hover effect
         this.DOM.enterAction = this.DOM.el.querySelector('.item__enter');
@@ -55,6 +59,7 @@ export class Item {
         this.editContentLayout();
 
         // back arrow button
+
         this.DOM.backCtrl = document.querySelector('.content__back');
 
 
@@ -73,7 +78,8 @@ export class Item {
         this.DOM.contentHeadingChars = [...this.DOM.contentElHeading.querySelectorAll('.char')];
         wrapElements(this.DOM.contentHeadingChars, 'span', 'char-wrap');
 
-        this.DOM.contentElText = [...this.DOM.contentEl.querySelectorAll('.content__text > *')];
+        this.DOM.contentElText = [...this.DOM.contentEl.querySelectorAll('.content__detail > *')];
+        this.DOM.imageMain =this.DOM.contentEl.querySelector('.project-image');
         
         
     }
@@ -215,6 +221,10 @@ export class Item {
             opacity: 0,
             y: '20%'
         }, 'start')
+        .set(this.DOM.imageMain, {
+            opacity: 0,
+            y: '20%'
+        }, 'start')
         // also set up the initial style for the back button
         .set(this.DOM.backCtrl, {
             scale: 0.8,
@@ -283,6 +293,14 @@ export class Item {
             opacity: 1,
             stagger: 0.03
         }, 'start+=0.7')
+
+        .to(this.DOM.imageMain, {
+            duration: 1.3,
+            ease: 'expo',
+            y: '0%',
+            opacity: 1,
+            stagger: 0.03
+        }, 'start+=0.7')
         // animate back button in
         .to(this.DOM.backCtrl, {
             duration: 1.3,
@@ -342,6 +360,12 @@ export class Item {
             stagger: this.invert ? 0.01 : -0.01
         }, 'start+=0.4')
         .to(this.DOM.contentElText, {
+            duration: 0.5,
+            ease: 'power4.in',
+            opacity: 0,
+            y: '20%'
+        }, 'start')
+        .to(this.DOM.imageMain, {
             duration: 0.5,
             ease: 'power4.in',
             opacity: 0,

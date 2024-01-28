@@ -11,8 +11,8 @@
 body {
   margin: 0;
   --color-text: #111;
-  --color-link: #d03939;
-  --color-link-hover: #000;
+  --color-link-hover: #d03939;
+  /* --color-link-hover: #000; */
   --color-menu: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
