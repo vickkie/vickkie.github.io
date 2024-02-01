@@ -86,7 +86,7 @@ a:focus-visible {
 }
 
 .heading {
-  font-family: kudryashev-d-excontrast-sans, sans-serif;
+  font-family: var(--font-1), sans-serif;
   font-weight: 300;
   font-size: 6vw;
   font-size: clamp(2rem, 6vw, 5rem);
@@ -529,7 +529,7 @@ a:focus-visible {
 
   margin: 5vh 0 6vh;
   line-height: 0.9;
-  text-transform: none;
+  text-transform: uppercase;
 }
 h2 {
   display: block;
