@@ -1,6 +1,6 @@
 /* @font-face {
   font-display: swap;
-  font-family: "grotesk";
+  font-family: "grotesk-diamond";
   src: url("../fonts/NeueHaasDisplayMediu.woff") format("woff");
 } */
 @font-face {
@@ -11,8 +11,8 @@
 
 @font-face {
   font-display: swap;
-  font-family: "grotesk-bold";
-  src: url("../fonts/overused-grotesk/OverusedGrotesk-Bold.woff") format("woff");
+  font-family: "grotesk-diamond";
+  src: url("../fonts/DiamondGrotesk.woff") format("woff");
 }
 .title-uzi {
   /* grid-area: 1 / 1 / 2 / 2; */
@@ -20,7 +20,7 @@
   grid-area: 1 / 1 / 3 / 3;
   font-size: 12vw;
   margin: 0;
-  font-family: grotesk, sans-serif;
+  font-family: grotesk-diamond, sans-serif;
   font-weight: 600;
   justify-self: center;
   align-self: center;

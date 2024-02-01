@@ -20,9 +20,10 @@ body {
   --stick-black: #000;
   --hero-font: 8vw;
   --hero-sub-font: 1.3rem;
-  --font-1: grotesk;
+
+  --font-1: grotesk-diamond;
   --font-2: LA-LUXE;
-  --font-3: grotesk-bold;
+  --font-3: grotesk;
 
   color: var(--color-black);
   background-color: var(--color-bg);
@@ -771,7 +772,7 @@ main {
   clip-path: circle(50% at 50% 50%);
   width: 120px;
   height: 120px;
-  font-family: aktiv-grotesk-extended, sans-serif;
+  font-family: var(--font-1), sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.85rem;
