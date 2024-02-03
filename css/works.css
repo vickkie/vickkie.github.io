@@ -328,16 +328,16 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   grid-area: proje-task;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: 0 20px;
 }
 .project-role {
   display: flex;
   flex-direction: column;
   grid-area: proje-role;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: 0 20px;
 }
 
@@ -610,4 +610,102 @@ h2 {
     width: 68%;
     height: 84%;
   }
+}
+
+.content__text {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "aim solution"
+    "how  achieved";
+}
+
+.project-aim {
+  grid-area: aim;
+}
+.project-sol {
+  grid-area: solution;
+}
+
+.main-aim {
+  font-size: 35px;
+  margin-top: 1.5rem;
+}
+.mid-font p {
+  font-size: 1.2rem;
+}
+.how-solution {
+  grid-area: how;
+}
+.achieved-solution {
+  grid-area: achieved;
+}
+
+@media screen and (max-width: 815px) {
+  .content__text {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 60px 1fr 60px 1fr;
+    grid-template-areas:
+      "aim"
+      "solution"
+      "how"
+      "achieved";
+  }
+  .content-works {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 20px;
+    grid-template-areas:
+      "backbutton ... case-no case-no"
+      "proje-head proje-head proje-head proje-head"
+      "proje-image proje-image proje-image proje-image"
+      "proje-task proje-task proje-task proje-task "
+      "proje-role proje-role proje-role proje-role"
+      "proje-details proje-details proje-details proje-details";
+    padding: 10px 50px;
+  }
+  .project-task {
+    font-weight: 300;
+  }
+  .project-role {
+    font-weight: 300;
+  }
+  .project-image {
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .content__text {
+    padding: 0;
+  }
+}
+
+/* .project-image img {
+  mask-image: url(https://tuxkarma.co/wp-content/themes/karma/img/formes/1b.svg);
+  -webkit-mask-image: url(https://tuxkarma.co/wp-content/themes/karma/img/formes/1b.svg);
+  mask-repeat: no-repeat;
+} */
+
+/* .project-image img {
+  mask-image: url(https://i.postimg.cc/kgBSj8Zz/Masquerade.png);
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url(https://i.postimg.cc/kgBSj8Zz/Masquerade.png);
+  -webkit-mask-repeat: no-repeat;
+} */
+.innerImg .innerMask {
+  display: block;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+.inset,
+.introRond svg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
