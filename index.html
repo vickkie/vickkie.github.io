@@ -378,9 +378,6 @@
           </svg>
         </button>
       </div>
-      <!-- From https://codepen.io/sebastien-gilbert/pen/VwLzvGV?editors=1010 -->
-
-      <!-- Edit the paths here: https://yqnn.github.io/svg-path-editor/ -->
       <svg class="overlay" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
       </svg>
@@ -492,12 +489,12 @@
           <div class="work-areas-spans">
             <span data-cursor="-medium -opaque" class="stick-fill" data-cursor-stick>FRONTEND DEVELOPMENT</span>
             <span data-cursor="-medium -exclusion" data-magnetic>UX/UI design</span>
-            <span data-cursor="-medium -exclusion">Branding</span>
-            <span data-cursor="-medium -exclusion">WEB REBRANDING</span>
-            <span data-cursor="-medium -exclusion">Backend</span>
-            <span data-cursor="-medium -exclusion">WEB MAINTAINANCE</span>
-            <span data-cursor="-medium -exclusion">Mobile apps</span>
-            <span data-cursor="-medium -exclusion">it consultancy</span>
+            <span data-cursor="-medium -opaque" class="stick-fill" data-cursor-stick>Branding</span>
+            <span data-cursor="-medium -exclusion" data-magnetic>WEB REBRANDING</span>
+            <span data-cursor="-medium -exclusion" data-magnetic>Backend</span>
+            <span data-cursor="-medium -opaque" class="stick-fill" data-cursor-stick>WEB MAINTAINANCE</span>
+            <span data-cursor="-medium -exclusion" data-magnetic>Mobile apps</span>
+            <span data-cursor="-medium -opaque" class="stick-fill" data-cursor-stick>IT consultancy</span>
           </div>
         </div>
         <div class="proof-experience">
@@ -1592,21 +1589,38 @@
       window.addEventListener("resize", hideMf);
     </script>
 
-    <script src="js/jquery.js"></script>
+    <script>
+      if (innerWidth > 768) {
+        const script = document.createElement("script");
+        script.src = "js/jquery.js";
+        document.body.appendChild(script);
+      }
+    </script>
     <script src="js/magnetic.js"></script>
 
     <script>
-      // const el = document.querySelector("[data-magnetic]");
-      const magnetic = new Magnetic(el, {
-        y: 0.2, // horizontal delta
-        x: 0.2, // vertical delta
-        s: 0.2, // speed
-        rs: 0.7, // release speed
-      });
-      // Automatic handle magnetic elements through attribute
-      const elements = document.querySelectorAll("[data-magnetic]");
-      elements.forEach((el) => {
-        new Magnetic(el);
+      document.addEventListener("DOMContentLoaded", function () {
+        // Magnetic effect for elements with class .viewall
+        const els = document.querySelectorAll(".magnetic");
+
+        els.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            console.log("magnettt");
+          });
+
+          // Apply Magnetic effect to each element individually
+          new Magnetic(el, {
+            y: 0.4, // horizontal delta
+            x: 0.4, // vertical delta
+            s: 0.2, // speed
+            rs: 0.7, // release speed
+          });
+        });
+
+        // Automatic handle magnetic elements through attribute
+        $("[data-magnetic]").each(function () {
+          new Magnetic(this);
+        });
       });
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0NF6J8B0H"></script>
