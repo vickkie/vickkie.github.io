@@ -143,7 +143,7 @@ main {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto auto 1fr auto;
   grid-template-areas:
-    "author dropdown dropdown contactme "
+    "author dropdown dropdown ... "
     "linehead linehead linehead linehead"
     "... ... ... ..."
     "links links links links"
@@ -179,6 +179,7 @@ main {
   grid-area: author;
   font-family: var(--font-1);
   font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .frame__button {
@@ -197,11 +198,19 @@ main {
 }
 
 .frame__contact {
-  grid-area: contactme;
+  /* grid-area: contactme; */
+  grid-column: 1/1;
   justify-self: end;
   font-family: var(--font-1);
   font-size: 0.9rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 14px;
+  grid-column-gap: 3px;
+  font-weight: 900;
+  align-items: end;
+  padding-bottom: 4px;
+  padding-right: 10px;
+  cursor: pointer;
 }
 
 /* .frame__heading-main {
@@ -1051,6 +1060,7 @@ main {
   transition: all 0.3s ease-in-out;
   min-height: 40vh;
   background-color: thistle;
+  /* background-color: #ff322f; */
   align-content: center;
   display: grid;
   z-index: 1;
@@ -1155,6 +1165,7 @@ main {
 .frame__contact svg {
   height: 0.9rem;
   stroke: var(--color-black);
+  transform: translateY(-2px);
 }
 @media (max-width: 400px) {
   .footer {
