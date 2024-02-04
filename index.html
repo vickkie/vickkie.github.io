@@ -490,8 +490,8 @@
             ></span>
           </div>
           <div class="work-areas-spans">
-            <span data-cursor="-medium -exclusion">FRONTEND DEVELOPMENT</span>
-            <span data-cursor="-medium -exclusion">UX/UI design</span>
+            <span data-cursor="-medium -opaque" class="stick-fill" data-cursor-stick>FRONTEND DEVELOPMENT</span>
+            <span data-cursor="-medium -exclusion" data-magnetic>UX/UI design</span>
             <span data-cursor="-medium -exclusion">Branding</span>
             <span data-cursor="-medium -exclusion">WEB REBRANDING</span>
             <span data-cursor="-medium -exclusion">Backend</span>
@@ -1592,6 +1592,23 @@
       window.addEventListener("resize", hideMf);
     </script>
 
+    <script src="js/jquery.js"></script>
+    <script src="js/magnetic.js"></script>
+
+    <script>
+      // const el = document.querySelector("[data-magnetic]");
+      const magnetic = new Magnetic(el, {
+        y: 0.2, // horizontal delta
+        x: 0.2, // vertical delta
+        s: 0.2, // speed
+        rs: 0.7, // release speed
+      });
+      // Automatic handle magnetic elements through attribute
+      const elements = document.querySelectorAll("[data-magnetic]");
+      elements.forEach((el) => {
+        new Magnetic(el);
+      });
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0NF6J8B0H"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

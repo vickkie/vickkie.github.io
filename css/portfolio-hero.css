@@ -588,7 +588,7 @@ main {
   max-height: fit-content;
   width: 100vw;
   transition: all 0.3s linear;
-  padding: 2vh 0;
+  padding: 20vh 0 2vh 0;
   position: relative;
   z-index: 2;
   background-color: var(--color-bg);
@@ -1326,4 +1326,14 @@ main {
   .tag {
     padding: 0.3rem 0.5rem 0.3rem;
   }
+}
+
+.stick-fill:hover {
+  background: black;
+  color: white;
+  transition: background-position 0.5s ease;
+}
+
+.stick-fill:hover {
+  background-position: right center;
 }
