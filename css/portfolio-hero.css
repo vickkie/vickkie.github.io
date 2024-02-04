@@ -20,6 +20,7 @@ body {
   --stick-black: #000;
   --hero-font: 8vw;
   --hero-sub-font: 1.3rem;
+  --size-submain: 3rem;
 
   --font-1: grotesk-diamond;
   --font-2: LA-LUXE;
@@ -720,9 +721,15 @@ main {
   .button-r.button--fenrir {
     transform: scale(1.5);
   }
+  .work-areas-spans span {
+    text-transform: uppercase;
+    padding: 0.2rem 1rem;
+  }
+
   body {
     --hero-font: 8vw;
     --hero-sub-font: 0.7rem;
+    --size-submain: 1.9rem;
   }
   .l3__left svg {
     height: 40px;
@@ -1023,6 +1030,11 @@ main {
   .section__header {
     padding: 0 !important;
   }
+  .design-areas {
+    font-size: var(--size-submain);
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .footer {
@@ -1172,7 +1184,7 @@ main {
 }
 
 .dev-header {
-  font-size: 3rem;
+  font-size: var(--size-submain);
   /* text-align: center; */
   font-family: inherit;
 }
@@ -1210,7 +1222,7 @@ main {
     "proof-experience proof-experience";
 }
 .design-areas {
-  font-size: 3rem;
+  font-size: var(--size-submain);
 }
 
 .tag {
@@ -1241,7 +1253,7 @@ main {
 .dev-forlio {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  font-size: 3rem;
+  font-size: var(--size-submain);
   margin-bottom: 15vh;
   position: relative;
 }
@@ -1266,4 +1278,52 @@ main {
 }
 .head-desc {
   padding-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .intro-port {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .intro-port {
+    grid-template-areas:
+      "intro-port-menu"
+      "designer-desc"
+      "designer-image "
+      "work-areas "
+      "proof-experience ";
+  }
+
+  .dev-forlio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-size: var(--size-submain);
+    margin-bottom: 10vh;
+    position: relative;
+    padding-left: 28px;
+  }
+  .designer-desc {
+    padding: 0px 20px;
+    grid-area: designer-desc;
+  }
+  .designer-image {
+    grid-area: designer-image;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .head-desc {
+    padding-top: 30px;
+    text-align: center;
+  }
+  .designer-desc {
+    grid-area: designer-desc;
+    padding: 8vh 20px;
+  }
+  .tag {
+    padding: 0.3rem 0.5rem 0.3rem;
+  }
 }
