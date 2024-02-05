@@ -13,6 +13,7 @@ body {
   --cursor-stroke: #000;
   --cursor-fill: none;
   --cursor-stroke-width: 1px;
+  --hot-tomato: #ff3227;
   line-height: 1;
   font-weight: 300;
   overflow-x: hidden;
@@ -513,6 +514,7 @@ a:focus-visible {
   justify-content: space-around;
   padding: 4vh 8vw;
   margin-bottom: 4rem;
+  position: relative;
 }
 .section__year {
   color: var(--color-text-alt);

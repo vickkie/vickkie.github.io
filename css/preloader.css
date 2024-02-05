@@ -27,6 +27,7 @@
   position: relative;
   z-index: 1;
   color: rgb(216, 152, 216);
+  /* color: #FF3227; */
   pointer-events: none;
   width: 100%;
   height: 100vh;
