@@ -1,16 +1,7 @@
-/*!
- * Cuberto Magnetic
- *
- * @version 1.5.0
- * @author Cuberto (cuberto.com)
- * @licence Copyright (c) 2020, Cuberto. All rights reserved.
- */
+// magnetic-curberto.js
 
-// import $ from 'jquery';
-// import gsap from "gsap";
-
-class Magnetic {
-    constructor(el, options = {}) {
+(function ($) {
+    function Magnetic(el, options) {
         this.el = $(el);
         this.options = $.extend(true, {
             y: 0.2,
@@ -30,27 +21,29 @@ class Magnetic {
         this.bind();
     }
 
-    bind() {
-        this.el.on('mouseenter', () => {
-            this.y = this.el.offset().top - window.pageYOffset;
-            this.x = this.el.offset().left - window.pageXOffset;
-            this.width = this.el.outerWidth();
-            this.height = this.el.outerHeight();
+    Magnetic.prototype.bind = function () {
+        var self = this;
+
+        this.el.on('mouseenter', function () {
+            self.y = self.el.offset().top - window.pageYOffset;
+            self.x = self.el.offset().left - window.pageXOffset;
+            self.width = self.el.outerWidth();
+            self.height = self.el.outerHeight();
         });
 
-        this.el.on('mousemove', (e) => {
-            const y = (e.clientY - this.y - this.height / 2) * this.options.y;
-            const x = (e.clientX - this.x - this.width / 2) * this.options.x;
+        this.el.on('mousemove', function (e) {
+            var y = (e.clientY - self.y - self.height / 2) * self.options.y;
+            var x = (e.clientX - self.x - self.width / 2) * self.options.x;
 
-            this.move(x, y, this.options.s);
+            self.move(x, y, self.options.s);
         });
 
-        this.el.on('mouseleave', (e) => {
-            this.move(0, 0, this.options.rs);
+        this.el.on('mouseleave', function (e) {
+            self.move(0, 0, self.options.rs);
         });
-    }
+    };
 
-    move(x, y, speed) {
+    Magnetic.prototype.move = function (x, y, speed) {
         gsap.to(this.el, {
             y: y,
             x: x,
@@ -58,5 +51,8 @@ class Magnetic {
             overwrite: true,
             duration: speed
         });
-    }
-}
+    };
+
+    window.Magnetic = Magnetic;
+
+})(jQuery);
