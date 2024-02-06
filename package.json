@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@builder.io/partytown": "^0.9.1"
+  }
+}

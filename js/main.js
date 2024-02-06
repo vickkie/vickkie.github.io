@@ -1,0 +1,421 @@
+//Group 1; code to update time
+      document.addEventListener("DOMContentLoaded", () => {
+        let time = document.querySelector(".time");
+        function updateTime() {
+          var date = new Date();
+          time.innerHTML = date.toTimeString().substr(0, 5);
+        }
+        updateTime();
+        setInterval(() => {
+          updateTime();
+        }, 1000);
+      });
+    
+    
+      //Group 2; code to open menu
+      let openMenu = document.querySelector(".button-menu");
+      let closeMenu = document.querySelector(".button-close");
+      let menuholders = document.querySelectorAll(".menu-will-open");
+      let myCursor = document.querySelector(".mf-cursor");
+
+      menuholders.forEach((body) => {
+        openMenu.addEventListener("click", () => {
+          setTimeout(() => {
+            body.classList.add("menu-is-open");
+
+            if (myCursor) {
+              myCursor.style.display = "none";
+            }
+          }, 1000);
+        });
+        closeMenu.addEventListener("click", () => {
+          setTimeout(() => {
+            body.classList.remove("menu-is-open");
+            if (myCursor) {
+              myCursor.style.display = "block";
+            }
+          }, 1000);
+        });
+      });
+    
+
+    
+      // GROUP 3; smooth scrolling
+
+      function lenisSmooth() {
+        if (innerWidth > 767) {
+          const lenis = new Lenis({
+            duration: 3,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: "vertical",
+            gestureDirection: "vertical",
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+            autoResize: true,
+          });
+
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+
+          requestAnimationFrame(raf);
+        }
+      }
+
+      lenisSmooth();
+
+      window.addEventListener("resize", lenisSmooth);
+    
+
+   
+      //Group 4 : line animation for guiding hero
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      setTimeout(() => {
+        if (innerWidth > 767) {
+          function lineTimeline(element) {
+            const afterPseudo = gsap.timeline({
+              defaults: {
+                duration: 2,
+                ease: "power2.out",
+              },
+            });
+
+            afterPseudo.fromTo(
+              element,
+              {
+                scaleX: 1,
+                opacity: 1,
+                transformOrigin: "center center",
+              },
+              {
+                scaleX: 0,
+                opacity: 0,
+              }
+            );
+
+            return afterPseudo;
+          }
+
+          document.querySelectorAll("[line-triggerX]").forEach(function (element) {
+            const lineTrigger = element.getAttribute("line-triggerX");
+
+            const linetimeline = lineTimeline(element);
+
+            ScrollTrigger.create({
+              trigger: lineTrigger,
+              start: "top 80%",
+              // markers:true,
+              animation: linetimeline,
+              onEnter: () => linetimeline.play(),
+            });
+          });
+
+          function lineyTimeline(element) {
+            const afterPseudoY = gsap.timeline({
+              defaults: {
+                duration: 2,
+                ease: "power2.out",
+                delay: 1.2,
+              },
+            });
+
+            afterPseudoY.fromTo(
+              element,
+              {
+                scaleY: 1,
+                opacity: 1,
+                transformOrigin: "bottom",
+              },
+              {
+                scaleY: 0,
+                opacity: 0,
+              }
+            );
+
+            return afterPseudoY;
+          }
+
+          document.querySelectorAll("[line-triggerY]").forEach(function (element) {
+            const lineyTrigger = element.getAttribute("line-triggerY");
+
+            const lineytimeline = lineyTimeline(element);
+
+            ScrollTrigger.create({
+              trigger: lineyTrigger,
+              start: "top 80%",
+              // markers:true,
+              animation: lineytimeline,
+              toggleActions: "play none none none",
+            });
+          });
+        }
+      }, 2000);
+    
+
+   
+      //Group 5 : show footer
+
+      if (innerWidth > 767) {
+        function showFooter() {
+          gsap.registerPlugin(ScrollTrigger);
+
+          let herotimeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: ".slide",
+              start: "top bottom",
+              end: "bottom 60%",
+              scrub: true,
+              // markers: true
+            },
+          });
+
+          herotimeline.to(".slide", {
+            y: "-40vh",
+            ease: "expo.out",
+            // duration: 3
+          });
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+          showFooter();
+        });
+
+        window.addEventListener("resize", showFooter);
+      }
+    
+
+   
+      // Group 6 : folding of text from opaCITY AnimaTION
+
+      const fx28Titles = [...document.querySelectorAll("[data-splitting][data-effect28]")];
+
+      if (fx28Titles) {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(SplitText);
+
+        let title = new SplitText("[data-splitting][data-effect28]", {
+          type: "words,lines,chars",
+          wordsClass: "content__title word",
+          charsClass: "char",
+          linesClass: "lines",
+        });
+
+        fx28Titles.forEach((title) => {
+          const words = [...title.querySelectorAll(".word")];
+
+          for (const word of words) {
+            const chars = word.querySelectorAll(".char");
+            const charsTotal = chars.length;
+
+            gsap.fromTo(
+              chars,
+              {
+                "will-change": "transform, filter",
+                transformOrigin: "50% 100%",
+                scale: (position) => {
+                  const factor =
+                    position < Math.ceil(charsTotal / 2)
+                      ? position
+                      : Math.ceil(charsTotal / 2) - Math.abs(Math.floor(charsTotal / 2) - position) - 1;
+                  return gsap.utils.mapRange(0, Math.ceil(charsTotal / 2), 0.5, 2.1, factor);
+                },
+                y: (position) => {
+                  const factor =
+                    position < Math.ceil(charsTotal / 2)
+                      ? position
+                      : Math.ceil(charsTotal / 2) - Math.abs(Math.floor(charsTotal / 2) - position) - 1;
+                  return gsap.utils.mapRange(0, Math.ceil(charsTotal / 2), 0, 60, factor);
+                },
+                rotation: (position) => {
+                  const factor =
+                    position < Math.ceil(charsTotal / 2)
+                      ? position
+                      : Math.ceil(charsTotal / 2) - Math.abs(Math.floor(charsTotal / 2) - position) - 1;
+                  return position < charsTotal / 2
+                    ? gsap.utils.mapRange(0, Math.ceil(charsTotal / 2), -4, 0, factor)
+                    : gsap.utils.mapRange(0, Math.ceil(charsTotal / 2), 0, 4, factor);
+                },
+                filter: "blur(12px) opacity(0)",
+              },
+              {
+                ease: "power2.inOut",
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                filter: "blur(0px) opacity(1)",
+                scrollTrigger: {
+                  trigger: word,
+                  start: "top bottom+=40%",
+                  end: "top top+=15%",
+                  scrub: true,
+                },
+                stagger: {
+                  amount: 0.15,
+                  from: "center",
+                },
+              }
+            );
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // scroll();
+        // unfold();
+      });
+    
+
+    //Group 7; code to change image on menu clicking
+
+      let menGallery = document.querySelector(".menu-gallery"),
+        workMenu = document.querySelector(".menu-work"),
+        gallerypics = menGallery.querySelectorAll(".gallery__item-imginner");
+
+      const changeWorkMenu = () => {
+        gallerypics.forEach(function (element, i) {
+          //  let gallerypic = querySelector(".gallery__item-imginner");
+          let imageSet = element.getAttribute("data-image");
+
+          // console.log(element, imageSet, i);
+          // element.style.backgroundImage = `${imageSet}`;
+          // element.setAttribute("style", `background:${imageSet}`);
+
+          let timeline = gsap.timeline();
+
+          timeline
+            .addLabel("rotate,+=0")
+            .to(
+              element,
+              {
+                transform: "rotate3d(0, 1, 0, 180deg)",
+                perspective: "1000px",
+                duration: 1.2,
+                ease: "power2.in",
+                id: i + 1,
+              },
+              "rotate"
+            )
+            .add(() => {
+              element.classList.add(`menu-image${i}`);
+            });
+        });
+      };
+
+      const resumeMenu = () => {
+        gallerypics.forEach(function (element, i) {
+          //  let gallerypic = querySelector(".gallery__item-imginner");
+          let imageSet = element.getAttribute("data-image");
+
+          // console.log(element, imageSet, i);
+          // element.style.backgroundImage = `${imageSet}`;
+
+          let timeline = gsap.timeline();
+
+          timeline
+            .to(element, {
+              transform: "rotate3d(0, 1, 0, 0deg);",
+              perspective: "1000px",
+              duration: 1.2,
+              ease: "power2.in",
+              id: i + 1,
+            })
+            .add(() => {
+              element.classList.remove(`menu-image${i}`);
+            });
+        });
+      };
+
+      workMenu.addEventListener("mouseenter", () => {
+        changeWorkMenu();
+      });
+
+      // workMenu.addEventListener("mouseleave", () => {
+      //   resumeMenu();
+      // });
+    
+    //Group 8; code to toggle dark-light modes
+
+
+      document.addEventListener("DOMContentLoaded", () => {
+        let toggleButton = document.querySelector(".knob");
+        let togglePath = document.querySelector(".dark-toggle");
+        let root = document.querySelector("body");
+
+        let xCursor = document.querySelector(".mf-cursor");
+
+        let on = false;
+
+        const toggleMode = () => {
+          on = !on;
+
+          let modeOff = gsap.timeline();
+          modeOff.to(toggleButton, {
+            x: () => (on ? 18 : 0),
+            duration: 0.4,
+            ease: "expo.in",
+          });
+          // .set(root, {
+          //   setProperty: ("-color--black", "#fff"),
+          // });
+        };
+
+        togglePath.addEventListener("click", () => {
+          toggleMode();
+          root.classList.toggle("dark-mode");
+          xCursor.classList.add("-exclusion");
+
+          // bodyComputedStyle.getPropertyValue('--color-black'),
+        });
+      });
+    
+
+
+//Group 9; initiating and controlling custom cursor
+    
+      if (innerWidth > 767) {
+        let cursor = new MouseFollower();
+      }
+    
+   
+      if (document.querySelector(".mf-cursor")) {
+        function hideMf() {
+          if (innerWidth < 768) {
+            document.querySelector(".mf-cursor").style.display = "none";
+          }
+        }
+
+        hideMf();
+      }
+      window.addEventListener("resize", hideMf);
+    
+
+// Group 10:  Magnetic effect for elements with class .viewall
+   
+      document.addEventListener("DOMContentLoaded", function () {
+        
+        const els = document.querySelectorAll(".magnetic");
+
+        els.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            console.log("magnettt");
+          });
+
+          // Apply Magnetic effect to each element individually
+          new Magnetic(el, {
+            y: 0.4, // horizontal delta
+            x: 0.4, // vertical delta
+            s: 0.2, // speed
+            rs: 0.7, // release speed
+          });
+        });
+
+        // Automatic handle magnetic elements through attribute
+        $("[data-magnetic]").each(function () {
+          new Magnetic(this);
+        });
+      });
+    
