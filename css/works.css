@@ -685,6 +685,15 @@ h2 {
   }
 }
 
+@media (max-width: 375px) {
+  .content-works {
+    padding: 10px 15px !important;
+  }
+  .works {
+    padding: 3rem 1.3rem !important;
+  }
+}
+
 /* .project-image img {
   mask-image: url(https://tuxkarma.co/wp-content/themes/karma/img/formes/1b.svg);
   -webkit-mask-image: url(https://tuxkarma.co/wp-content/themes/karma/img/formes/1b.svg);

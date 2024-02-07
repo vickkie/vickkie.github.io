@@ -1066,6 +1066,12 @@ main {
   }
 }
 
+@media screen and (max-width: 375px) {
+  .design-areas {
+    flex-direction: row;
+    padding: 0 0 20px 0;
+  }
+}
 .footer {
   position: fixed;
   bottom: 0;
