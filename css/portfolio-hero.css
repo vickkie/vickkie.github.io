@@ -271,6 +271,33 @@ main {
   height: 100vh;
 }
 
+.portfolio-map {
+  position: fixed;
+  display: grid;
+  width: max-content;
+  height: fit-content;
+  padding-right: 30px;
+  top: 50px;
+  right: 0;
+  z-index: 4;
+}
+.portfolio-map ul {
+  list-style: none;
+  /* grid-area: portmap; */
+  font-size: 12px;
+  font-family: inherit;
+  text-align: right;
+  color: var(--color-black);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.portfolio-map a {
+  cursor: pointer;
+  text-rendering: optimizeSpeed;
+}
+
 .content__l1 {
   display: grid;
   grid-template-columns: 20vw 1fr 1fr;

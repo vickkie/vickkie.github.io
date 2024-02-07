@@ -9,7 +9,7 @@ let offlineUrl="offline.html";
 const cacheAssets =[
     offlineUrl,
     // '../assets/svg/trakexcel-t.svg',
-    'fonts/AdornStorySerif.woff'
+    'fonts/DiamondGrotesk.woff'
 
 ];
 
