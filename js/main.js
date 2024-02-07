@@ -176,9 +176,9 @@ if (innerWidth > 767) {
       // duration: 3
     });
   }
-  document.addEventListener("DOMContentLoaded", () => {
+
     showFooter();
-  });
+
 
   window.addEventListener("resize", showFooter);
 }
@@ -343,14 +343,19 @@ workMenu.addEventListener("mouseenter", () => {
 
     let modeOff = gsap.timeline();
     modeOff.to(toggleButton, {
-      x: () => (on ? 18 : 0),
-      duration: 0.4,
-      ease: "expo.in",
+        x: () => (on ? 18 : 0),
+        duration: 0.4,
+        ease: "expo.in",
     });
-    // .set(root, {
-    //   setProperty: ("-color--black", "#fff"),
-    // });
-  };
+    let heylinkers = document.querySelectorAll('.portfolio-map a');
+    heylinkers.forEach(heylinker => {
+      gsap.set(heylinker, {
+        color: (on ? "#fff" : "#000")
+     });
+    });
+    
+};
+
 
   togglePath.addEventListener("click", () => {
     toggleMode();

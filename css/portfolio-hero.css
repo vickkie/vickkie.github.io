@@ -296,6 +296,7 @@ main {
 .portfolio-map a {
   cursor: pointer;
   text-rendering: optimizeSpeed;
+  color: var(--color-black);
 }
 
 .content__l1 {
