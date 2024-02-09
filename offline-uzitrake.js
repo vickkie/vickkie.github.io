@@ -16,7 +16,7 @@ const cacheAssets =[
 //call install event
 
 self.addEventListener('install', e => {
-  console.log('Service-worker:installed');
+  // console.log('Service-worker:installed');
 
   e.waitUntil(
     caches
@@ -37,7 +37,7 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activate', e => {
 
-  console.log('Service-worker:activated');
+  // console.log('Service-worker:activated');
   e.waitUntil(
     caches.keys()
     .then(cacheNames => {
@@ -58,7 +58,7 @@ self.addEventListener('activate', e => {
 
 // call fetch event
 self.addEventListener('fetch', (e) => {
-  console.log('Service worker: fetching');
+  // console.log('Service worker: fetching');
   e.respondWith(
     fetch(e.request)
     .catch(() => caches.match(offlineUrl))

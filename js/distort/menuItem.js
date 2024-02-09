@@ -8,16 +8,15 @@ export class MenuItem {
 
         // initial and final colors for each span char (before and after hovering)
         //reminder: remove setInterval and implement 
-        setInterval(() => {
-
+    setInterval(() => {
         const bodyComputedStyle = getComputedStyle(document.body);
-        this.colors = {
-            initial: bodyComputedStyle.getPropertyValue('--color-black'), 
-            final: bodyComputedStyle.getPropertyValue('--color-link')
-        };
-        }, 100);
-        
-        console.log(this.colors);
+       this.colors = {
+        initial: bodyComputedStyle.getPropertyValue('--color-black'), 
+        final: bodyComputedStyle.getPropertyValue('--color-white')
+       };
+    //   console.log(this.colors);
+    }, 10000);
+
 
         this.initEvents();
     }
