@@ -484,7 +484,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 0);
 });
 
-// Array of words
+//Group 13: change Array of words in hello contact footer
+
 const words = ["Hello", "Hola", "Bonjour", "Salut", "Chao"];
 let currentIndex = 0;
 
@@ -496,3 +497,10 @@ function changeWord() {
 
 // Call the function after 10 seconds
 setInterval(changeWord, 10000);
+
+// Group 13: copy email address
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text);
+  alert("Email address copied to clipboard!");
+}

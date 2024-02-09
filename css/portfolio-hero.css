@@ -1550,6 +1550,9 @@ main {
 .email-box:hover {
   cursor: pointer;
   background-color: var(--color-black);
+}
+
+.email-box:hover .email-itself {
   color: var(--color-bg);
 }
 .this-email {
@@ -1752,4 +1755,20 @@ main {
 .wiggle-star svg {
   width: 100px;
   height: auto;
+}
+
+.uzi-n-u {
+  grid-row: 3/4;
+  grid-column: 1/4;
+  display: flex;
+  height: max-content;
+  justify-content: center;
+  align-items: top;
+  z-index: 5;
+}
+
+.u-n-uzi {
+  font-size: var(--email-font);
+  color: var(--color-bg);
+  font-family: inherit;
 }
