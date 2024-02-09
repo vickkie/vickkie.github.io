@@ -1772,3 +1772,26 @@ main {
   color: var(--color-bg);
   font-family: inherit;
 }
+
+.socials-spans {
+  grid-row: 4/5;
+  grid-column: 1/4;
+  display: flex;
+  height: max-content;
+  justify-content: center;
+  align-items: top;
+  z-index: 5;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.socials-spans span {
+  padding: 11px 39px;
+  border: solid 1px var(--color-bg);
+  border-radius: 35px;
+  font-size: calc(var(--hero-sub-font) + 1rem);
+  color: var(--color-bg);
+}
+.socials-spans span:hover {
+  scale: 1.1;
+}
