@@ -1528,6 +1528,7 @@ main {
 .mail-box {
   font-size: var(--email-font);
   width: fit-content;
+  overflow: hidden;
 }
 
 .email-wrapper {
@@ -1576,6 +1577,7 @@ main {
   justify-content: center;
   align-items: center;
   position: relative;
+  text-align: center;
 }
 .this-socials-text {
   font-size: var(--size-2rem);
@@ -1803,4 +1805,48 @@ main {
 }
 .socials-spans span:hover {
   scale: 1.1;
+}
+
+@media screen and (max-width: 767px) {
+  .wiggle {
+    display: grid;
+    min-height: 100svh;
+    grid-template-rows: 70px 100px 100px;
+  }
+
+  #logo-36 {
+    width: 40px;
+  }
+  .great-work img {
+    width: 82px;
+  }
+
+  .more-work {
+    grid-template-columns: 82px 1fr 30px;
+    grid-template-areas: "greatwork morework logowork";
+    margin: 0 -20px;
+  }
+  .lets-you {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .socials-spans {
+    flex-direction: column;
+    width: fit-content;
+    justify-self: center;
+  }
+  .socials-spans span {
+    padding: 11px 22px;
+  }
+}
+
+.wiggle-socials {
+  display: flex;
+}
+.wiggle-socials svg {
+  height: 30px;
+  justify-self: center;
+  align-self: center;
 }
