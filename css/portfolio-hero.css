@@ -25,7 +25,7 @@ body {
   --size-2rem: 2rem;
   --bright-thistle: #88b2c4;
   --thistle: #a0c0cd;
-  --email-font: 8rem;
+  --email-font: 8vw;
 
   --font-1: grotesk-diamond;
   --font-2: LA-LUXE;
@@ -1083,7 +1083,7 @@ main {
   width: 100%;
   transition: all 0.3s ease-in-out;
   min-height: 40vh;
-  background-color: thistle;
+  background-color: var(--bright-thistle);
   /* background-color: #ff322f; */
   align-content: center;
   display: grid;
@@ -1544,7 +1544,7 @@ main {
   border-radius: 135px;
   color: var(--color-black);
   border: 2px solid var(--color-black);
-  font-size: calc(var(--email-font) - 4rem);
+  font-size: calc(var(--email-font) - 3vw);
   position: relative;
 }
 .email-box:hover {
@@ -1585,11 +1585,16 @@ main {
 
 .copy-page__toggle-button {
   position: absolute;
-  left: -17%;
-  top: 34px;
+  left: -18%;
+  top: 6px;
   transform: rotate(305deg);
 }
 
+@media screen and (max-width: 767px) {
+  .copy-page__toggle-button {
+    display: none;
+  }
+}
 /* // */
 
 @media (max-width: 1919px) {
@@ -1629,6 +1634,10 @@ main {
   width: fit-content;
   border: solid 1px var(--color-black);
   border-radius: 25px;
+}
+
+.email-box:hover .toggle-button__star {
+  animation: rotatearound 2s linear;
 }
 
 .toggle-button__label-1 {

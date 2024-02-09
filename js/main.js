@@ -502,5 +502,14 @@ setInterval(changeWord, 10000);
 
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text);
-  alert("Email address copied to clipboard!");
+
+  let copies = document.querySelectorAll(".copy");
+
+  copies.forEach((copy) => {
+    copy.innerHTML = "Copied";
+
+    setTimeout(() => {
+      copy.innerHTML = "Copy!";
+    }, 4000);
+  });
 }
