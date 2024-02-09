@@ -501,15 +501,66 @@ setInterval(changeWord, 10000);
 // Group 13: copy email address
 
 function copyToClipboard(text) {
-  navigator.clipboard.writeText(text);
+  if (innerWidth > 767) {
+    navigator.clipboard.writeText(text);
 
-  let copies = document.querySelectorAll(".copy");
+    let copies = document.querySelectorAll(".copy");
 
-  copies.forEach((copy) => {
-    copy.innerHTML = "Copied";
+    copies.forEach((copy) => {
+      copy.innerHTML = "Copied";
 
-    setTimeout(() => {
-      copy.innerHTML = "Copy!";
-    }, 4000);
-  });
+      setTimeout(() => {
+        copy.innerHTML = "Copy!";
+      }, 4000);
+    });
+  }
 }
+
+// Group 14 : animate text
+const text3d = () => {
+  if (innerWidth > 767) {
+    gsap.registerPlugin(ScrollTrigger);
+    const fx19Titles = [...document.querySelectorAll("[data-splitting][data-effect19]")];
+
+    fx19Titles.forEach((title) => {
+      const chars = title.querySelectorAll(".char");
+
+      chars.forEach((char) => gsap.set(char.parentNode, { perspective: 1000 }));
+
+      gsap.fromTo(
+        chars,
+        {
+          "will-change": "opacity, transform",
+          transformOrigin: "50% 0%",
+          opacity: 0,
+          rotationX: -90,
+          z: -200,
+        },
+        {
+          ease: "power1",
+          opacity: 1,
+          stagger: 0.05,
+          rotationX: 0,
+          z: 0,
+          scrollTrigger: {
+            trigger: title,
+            start: "center bottom",
+            end: "bottom top+=20%",
+            scrub: true,
+          },
+        }
+      );
+    });
+  }
+};
+
+text3d();
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    text3d();
+    copyToClipboard();
+  }, 250);
+});

@@ -1727,7 +1727,7 @@ main {
   display: grid;
   min-height: 100svh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 70px 1fr 1fr;
+  grid-template-rows: 70px 1fr 120px 1fr;
   background: var(--thistle);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1743,7 +1743,7 @@ main {
   position: relative;
   width: 100%;
   grid-column: 1/4;
-  grid-row: 1/4;
+  grid-row: 1/5;
 }
 
 .wiggle-star-wrapper {
@@ -1790,8 +1790,7 @@ main {
   display: flex;
   height: max-content;
   justify-content: center;
-  align-items: top;
-  z-index: 5;
+  z-index: 6;
   gap: 20px;
   padding: 20px 0;
 }
@@ -1849,4 +1848,10 @@ main {
   height: 30px;
   justify-self: center;
   align-self: center;
+}
+.black-div {
+  background-color: var(--color-black);
+  grid-column: 1/4;
+  grid-row: 4/5;
+  z-index: 5;
 }
