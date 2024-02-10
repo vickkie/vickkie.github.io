@@ -545,7 +545,7 @@ const text3d = () => {
           scrollTrigger: {
             trigger: title,
             start: "center bottom",
-            end: "bottom top+=20%",
+            end: "bottom top+=40%",
             scrub: true,
           },
         }
@@ -564,3 +564,26 @@ window.addEventListener("resize", () => {
     copyToClipboard();
   }, 250);
 });
+
+let socialtl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".wiggle",
+    start: "top 90%",
+    end: "top 30%",
+    scrub: 1,
+  },
+});
+
+socialtl.fromTo(
+  "#logo-36",
+  {
+    scale: 0.3,
+    y: "-200px",
+    rotate: 0,
+  },
+  {
+    scale: 1,
+    y: 0,
+    rotate: 360,
+  }
+);

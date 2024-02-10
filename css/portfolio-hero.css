@@ -233,6 +233,7 @@ main {
 .button-menu {
   display: inline-grid;
   place-items: center;
+  cursor: pointer;
 }
 
 .button-menu svg {
@@ -519,6 +520,7 @@ main {
   margin: 1rem 2rem !important;
   stroke: var(--color-black);
   fill: none;
+  cursor: pointer;
 }
 
 .button-close:focus-visible,
