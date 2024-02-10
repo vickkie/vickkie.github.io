@@ -92,19 +92,6 @@ a:focus-visible {
   background: transparent;
 }
 
-.unbutton {
-  background: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  cursor: pointer;
-}
-
-.unbutton:focus {
-  outline: none;
-}
-
 .hover-line {
   white-space: nowrap;
   overflow: hidden;
@@ -1716,39 +1703,41 @@ main {
   right: 0;
 }
 
-.empty {
-  height: 40vh;
-  background-color: var(--color-black);
-  z-index: 4;
-  position: relative;
-}
-
 .wiggle {
   display: grid;
   min-height: 100svh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 70px 1fr 120px 1fr;
+  /* grid-template-rows: 100px 156px 100px 100px minmax(150px, 300px); */
+
+  grid-template-rows: 100px 156px 100px minmax(150px, 300px) 100px;
+  grid-template-areas:
+    "... ... ..."
+    "starsvg starsvg starsvg"
+    "buttons buttons buttons"
+    "letsmake letsmake letsmake"
+    "empty empty empty";
   background: var(--thistle);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   z-index: 5;
   position: relative;
-  max-height: 100vh;
   overflow: hidden;
   height: fit-content;
+  grid-row-gap: 30px;
 }
 .wiggle-svg {
   z-index: 5;
   position: relative;
   width: 100%;
   grid-column: 1/4;
-  grid-row: 1/5;
+  grid-row: 1/6;
 }
 
 .wiggle-star-wrapper {
-  grid-column: 2/3;
-  grid-row: 2/3;
+  /* grid-column: 2/3;
+  grid-row: 2/3; */
+  grid-area: starsvg;
   z-index: 6;
   background: transparent;
   color: var(--color-bg);
@@ -1769,8 +1758,10 @@ main {
 }
 
 .uzi-n-u {
-  grid-row: 3/4;
-  grid-column: 1/4;
+  /* grid-row: 3/4;
+  grid-column: 1/4; */
+
+  grid-area: uziyou;
   display: flex;
   height: max-content;
   justify-content: center;
@@ -1784,33 +1775,11 @@ main {
   font-family: inherit;
 }
 
-.socials-spans {
-  grid-row: 4/5;
-  grid-column: 1/4;
-  display: flex;
-  height: max-content;
-  justify-content: center;
-  z-index: 6;
-  gap: 20px;
-  padding: 20px 0;
-}
-
-.socials-spans span {
-  padding: 11px 39px;
-  border: solid 1px var(--color-bg);
-  border-radius: 35px;
-  font-size: calc(var(--hero-sub-font) + 1rem);
-  color: var(--color-bg);
-}
-.socials-spans span:hover {
-  scale: 1.1;
-}
-
 @media screen and (max-width: 767px) {
   .wiggle {
     display: grid;
     min-height: 100svh;
-    grid-template-rows: 70px 100px 100px;
+    grid-template-rows: 70px 100px 100px 200px;
   }
 
   #logo-36 {
@@ -1851,7 +1820,59 @@ main {
 }
 .black-div {
   background-color: var(--color-black);
-  grid-column: 1/4;
-  grid-row: 4/5;
+  /* grid-column: 1/4;
+  grid-row: 4/5; */
+  grid-area: blackdiv;
   z-index: 5;
+}
+
+.lets-make {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  font-size: var(--email-font);
+  color: var(--color-bg);
+  grid-area: letsmake;
+  /* grid-row: 5/6; */
+  position: relative;
+  z-index: 6;
+  /* grid-column: 1/4; */
+}
+
+.intro__button {
+  border: 1px solid #000000;
+  background: var(--color-bg);
+  box-shadow: -3px -2px 0 var(--color-bg);
+  border-radius: 50%;
+  justify-self: center;
+  margin-top: 1rem;
+  width: 76px;
+  height: 77px;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.intro__button-svg {
+  width: 60%;
+}
+
+.intro__button:hover {
+  transform: translate3d(1px, 2px, 0);
+  box-shadow: 0px 0px 0 var(--color-bg);
+}
+
+.social-buttons {
+  /* grid-row: 4/5;
+  grid-column: 1/4; */
+  grid-area: buttons;
+  display: flex;
+  height: max-content;
+  justify-content: center;
+  z-index: 6;
+  gap: 20px;
+  padding: 20px 0;
 }
