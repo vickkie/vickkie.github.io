@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let herotimeline = gsap.timeline({
           scrollTrigger: {
-            trigger: ".slide",
+            trigger: ".empty",
             start: "top bottom",
             end: "bottom 60%",
             scrub: true,
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
           },
         });
 
-        herotimeline.to(".slide", {
+        herotimeline.to(".empty", {
           y: "-40vh",
           ease: "expo.out",
           // duration: 3
@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toContact.addEventListener("click", () => {
       gsap.to(window, {
         duration: 3,
-        scrollTo: ".slide--6",
+        scrollTo: ".free-time",
         ease: "expo.out",
       });
     });
@@ -445,7 +445,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let linkersTimeline = gsap.timeline({
       paused: true, // Pause the timeline initially
       scrollTrigger: {
-        trigger: ".slide--6",
+        trigger: ".free-time",
         start: "top center",
         markers: !true,
         onEnter: () => {
@@ -501,7 +501,7 @@ setInterval(changeWord, 10000);
 // Group 13: copy email address
 
 function copyToClipboard(text) {
-  if (innerWidth > 767) {
+  if (innerWidth > 767 && document.hasFocus()) {
     navigator.clipboard.writeText(text);
 
     let copies = document.querySelectorAll(".copy");

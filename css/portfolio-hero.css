@@ -1703,6 +1703,13 @@ main {
   right: 0;
 }
 
+.empty {
+  height: 40vh;
+  background-color: var(--color-black);
+  z-index: 4;
+  position: relative;
+}
+
 .wiggle {
   display: grid;
   min-height: 100svh;
@@ -1779,7 +1786,7 @@ main {
   .wiggle {
     display: grid;
     min-height: 100svh;
-    grid-template-rows: 70px 100px 100px 200px;
+    grid-template-rows: 70px 45px 100px 200px;
   }
 
   #logo-36 {
@@ -1807,6 +1814,18 @@ main {
   }
   .socials-spans span {
     padding: 11px 22px;
+  }
+  .intro__button {
+    width: 52px;
+    height: 52px;
+  }
+  .wiggle {
+    display: grid;
+    min-height: fit-content;
+    grid-template-rows: 70px 45px 75px 100px;
+  }
+  .lets-make {
+    height: 30px;
   }
 }
 
