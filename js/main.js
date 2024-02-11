@@ -565,25 +565,29 @@ window.addEventListener("resize", () => {
   }, 250);
 });
 
-let socialtl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".wiggle",
-    start: "top 90%",
-    end: "top 30%",
-    scrub: 1,
-  },
-});
+// Group 14: rotate the socials star
 
-socialtl.fromTo(
-  "#logo-36",
-  {
-    scale: 0.3,
-    y: "-200px",
-    rotate: 0,
-  },
-  {
-    scale: 1,
-    y: 0,
-    rotate: 360,
-  }
-);
+if (innerWidth > 767) {
+  let socialtl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".wiggle",
+      start: "top 90%",
+      end: "top 30%",
+      scrub: 1,
+    },
+  });
+
+  socialtl.fromTo(
+    "#logo-36",
+    {
+      scale: 0.3,
+      y: "-200px",
+      rotate: 0,
+    },
+    {
+      scale: 1,
+      y: 0,
+      rotate: 360,
+    }
+  );
+}
