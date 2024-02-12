@@ -1879,7 +1879,7 @@ main {
 
 .intro__button {
   border: 1px solid #000000;
-  background: var(--color-bg);
+  background: white;
   box-shadow: -3px -2px 0 var(--color-bg);
   border-radius: 50%;
   justify-self: center;
