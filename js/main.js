@@ -591,3 +591,18 @@ if (innerWidth > 767) {
     }
   );
 }
+
+//Group 15: lets rotate some i's in the footer
+
+let chars = [...document.querySelectorAll(".rotate-i .char")];
+
+// Here we're creating a timeline that we can use
+const lettertl = gsap.timeline({
+  repeat: -1,
+  duration: 2,
+  delay: 3,
+  yoyo: true,
+});
+
+lettertl.to(chars[6], { rotation: 360 });
+lettertl.to(chars[11], { rotation: 360 });
