@@ -1355,6 +1355,9 @@ main {
   .tag {
     padding: 0.3rem 0.5rem 0.3rem;
   }
+  .empty {
+    z-index: 1 !important;
+  }
 }
 
 .stick-fill:hover {
@@ -1806,6 +1809,9 @@ main {
   .lets-you {
     width: 75%;
   }
+  .lets-make img {
+    height: 30px !important;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -1818,16 +1824,26 @@ main {
     padding: 11px 22px;
   }
   .intro__button {
-    width: 52px;
-    height: 52px;
+    width: 52px !important;
+    height: 52px !important;
   }
   .wiggle {
     display: grid;
     min-height: fit-content;
     grid-template-rows: 70px 45px 75px 100px;
   }
-  .lets-make {
-    height: 30px;
+  .free-time {
+    grid-template-rows: 89px 60px 10rem 153px 1fr;
+  }
+
+  .yoyo-headline {
+    font-size: calc(var(--size-2rem) + 5vw);
+  }
+  .yoyo {
+    font-size: calc(var(--size-2rem) + 5vw);
+  }
+  .this-email {
+    height: 57% !important;
   }
 }
 
@@ -1843,7 +1859,7 @@ main {
   background-color: var(--color-black);
   /* grid-column: 1/4;
   grid-row: 4/5; */
-  grid-area: blackdiv;
+  grid-area: empty;
   z-index: 5;
 }
 
