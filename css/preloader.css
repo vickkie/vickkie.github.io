@@ -167,6 +167,7 @@
   color: var(--stick-black);
   transform: translateZ(0);
   cursor: pointer;
+  display: grid;
 }
 
 /* backdrop-filter: blur(5px) brightness(.95);

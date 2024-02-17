@@ -1079,7 +1079,7 @@ main {
   z-index: 1;
   transform: translateZ(0);
   grid-template-areas:
-    ".. .. .."
+    "uzitrake uzitrake uzitrake"
     "uzitrake uzitrake uzitrake"
     "copyright year available";
   grid-template-columns: repeat(3, 1fr);
@@ -1183,7 +1183,7 @@ main {
 @media (max-width: 400px) {
   .footer {
     grid-template-areas:
-      ".. .. "
+      "uzitrake uzitrake "
       "uzitrake uzitrake "
       "copyright year ";
     grid-template-columns: repeat(2, 1fr);
@@ -1912,4 +1912,75 @@ main {
   z-index: 6;
   gap: 20px;
   padding: 20px 0;
+}
+
+/* ---------------------------- */
+
+.app-footer__marquee {
+  color: var(--color-black);
+  backdrop-filter: blur(4px);
+  font-size: calc(0.8925rem + 6.43571vw);
+  font-weight: 400;
+  padding: 0.25em 0;
+  white-space: nowrap;
+  --marquee-animation-duration: 40s;
+  font-family: var(--font-2);
+  /* background: url(https://i.postimg.cc/gjxwDng3/gradient-color.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.u-marquee {
+  --marquee-gap: 1ch;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.u-marquee,
+.u-marquee__content {
+  display: flex;
+  gap: var(--marquee-gap);
+  align-items: center;
+}
+
+.u-marquee__content {
+  animation: marquee var(--marquee-animation-duration) linear infinite;
+  flex-shrink: 0;
+  justify-content: space-around;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.u-marquee__content > * {
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(calc(-100% - var(--marquee-gap)));
+  }
+}
+
+.grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  justify-content: center;
+}
+.grid-lines {
+  width: 1px;
+  background: #000;
+  height: 100%;
+  opacity: 0.25;
 }
