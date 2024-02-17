@@ -1443,7 +1443,7 @@ main {
   grid-row: 2/3;
 }
 .yoyo {
-  color: var(--color-black);
+  color: var(--stick-black);
   font-size: var(--hero-font);
   width: 100%;
   justify-content: center;
@@ -1456,7 +1456,7 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-black);
+  color: var(--stick-black);
   font-size: var(--hero-font);
 }
 
@@ -1521,6 +1521,7 @@ main {
   font-size: var(--email-font);
   width: fit-content;
   overflow: hidden;
+  color: var(--stick-black);
 }
 
 .email-wrapper {
@@ -1535,7 +1536,7 @@ main {
   width: fit-content;
   padding: 1rem 2rem;
   border-radius: 135px;
-  color: var(--color-black);
+  color: var(--stick-black);
   border: 2px solid var(--color-black);
   font-size: calc(var(--email-font) - 3vw);
   position: relative;
@@ -1573,7 +1574,7 @@ main {
 }
 .this-socials-text {
   font-size: var(--size-2rem);
-  color: var(--color-black);
+  color: var(--stick-black);
   text-transform: uppercase;
 }
 
