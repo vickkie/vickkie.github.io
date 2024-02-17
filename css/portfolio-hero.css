@@ -1263,7 +1263,12 @@ main {
   border-radius: 35px;
   position: absolute;
   right: 22%;
-  top: 50%;
+  /* top: 50%; */
+}
+
+.latest-tag {
+  height: 78px;
+  width: auto;
 }
 .size-sm {
   font-family: var(--font-2);
