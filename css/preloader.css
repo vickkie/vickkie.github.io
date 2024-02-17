@@ -144,9 +144,6 @@
 
 .dark-toggle {
   stroke: var(--color-black);
-  position: absolute;
-  left: 48vw;
-  bottom: 20px;
   height: 40px;
   width: 65px;
 }
