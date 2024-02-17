@@ -614,20 +614,6 @@ lettertl.to(chars[11], { rotation: 360 });
 //   document.body.classList.add("dark-mode");
 // }
 
-// setTimeout(() => {
-//   // Select the u-marquee__content elements
-//   var marqueeContents = document.querySelectorAll(".u-marquee__content");
+//use the defaults
 
-//   // Remove existing content from each u-marquee__content element
-//   marqueeContents.forEach(function (element) {
-//     element.innerHTML = ""; // Empty the content
-//   });
-
-//   // Define the new content you want to append
-//   var newContent = "- UZITRAKE -";
-
-//   // Append the new content to each u-marquee__content element
-//   marqueeContents.forEach(function (element) {
-//     element.innerHTML = newContent;
-//   });
-// }, 5000);
+let emailbox = document.querySelector(".email-box");
