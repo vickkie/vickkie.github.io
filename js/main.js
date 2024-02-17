@@ -613,3 +613,21 @@ lettertl.to(chars[11], { rotation: 360 });
 //   // User prefers dark mode, add the dark-mode class to the body element
 //   document.body.classList.add("dark-mode");
 // }
+
+// setTimeout(() => {
+//   // Select the u-marquee__content elements
+//   var marqueeContents = document.querySelectorAll(".u-marquee__content");
+
+//   // Remove existing content from each u-marquee__content element
+//   marqueeContents.forEach(function (element) {
+//     element.innerHTML = ""; // Empty the content
+//   });
+
+//   // Define the new content you want to append
+//   var newContent = "- UZITRAKE -";
+
+//   // Append the new content to each u-marquee__content element
+//   marqueeContents.forEach(function (element) {
+//     element.innerHTML = newContent;
+//   });
+// }, 5000);
