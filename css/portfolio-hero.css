@@ -1518,7 +1518,7 @@ main {
   width: 100%;
 }
 .mail-box {
-  font-size: var(--email-font);
+  font-size: var(--size-2rem);
   width: fit-content;
   overflow: hidden;
   color: var(--stick-black);
@@ -1540,13 +1540,11 @@ main {
   border: 2px solid var(--color-black);
   font-size: calc(var(--email-font) - 3vw);
   position: relative;
-}
-.email-box:hover {
-  cursor: pointer;
   background-color: var(--color-black);
+  cursor: pointer;
 }
 
-.email-box:hover .email-itself {
+.email-itself {
   color: var(--color-bg);
 }
 .this-email {
