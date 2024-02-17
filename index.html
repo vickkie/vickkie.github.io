@@ -242,10 +242,11 @@
       </div>
       <div class="content-hero">
         <div class="frame__contact" data-cursor="-medium -exclusion">
-          <span><a href="mailto:vickkietrake@gmail.com">CONTACT</a></span>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 0V12" stroke="var(--bright-thistle)" stroke-width="2" stroke-miterlimit="10" />
-            <path d="M12 6H0" stroke="var(--bright-thistle)" stroke-width="2" stroke-miterlimit="10" />
+          <svg class="dark-toggle" stroke-linecap="round">
+            <g class="toggle" style="cursor: pointer; user-select: none">
+              <path d="M25,20 43,20" stroke-width="20" />
+              <path class="knob" d="M25,20 25,20" stroke-width="15" stroke="#000" />
+            </g>
           </svg>
         </div>
 
@@ -291,12 +292,24 @@
             <div class="div"></div>
           </div>
         </div>
-        <svg class="dark-toggle" stroke-linecap="round" data-cursor="-hidden">
-          <g class="toggle" style="cursor: pointer; user-select: none">
-            <path d="M25,20 43,20" stroke-width="25" />
-            <path class="knob" d="M25,20 25,20" stroke-width="20" stroke="#000" />
-          </g>
-        </svg>
+
+        <div class="scroll-now">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+
         <div class="frame__line__low" line-triggerX=".frame__line__low"></div>
       </div>
 
@@ -593,7 +606,7 @@
           "
           class="tag"
         >
-          <div class="caps align-c">😎&nbsp;<span class="script size-sm">Cool</span></div>
+          <div class="caps align-c"><img src="./img/svg/latest-project.svg" /></div>
         </div>
         <span class="section__year">2020</span>
         <h2 class="section__title section__title--medium" data-splitting data-effect28>
