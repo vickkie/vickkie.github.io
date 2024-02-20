@@ -607,13 +607,15 @@ const lettertl = gsap.timeline({
 lettertl.to(chars[6], { rotation: 360 });
 lettertl.to(chars[11], { rotation: 360 });
 
+//use the defaults
+
+let emailbox = document.querySelector(".email-box");
+
 // Group 13: darkmode if user browser prefers
 
 // if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
 //   // User prefers dark mode, add the dark-mode class to the body element
 //   document.body.classList.add("dark-mode");
+// } else {
+//   document.body.classList.remove("dark-mode");
 // }
-
-//use the defaults
-
-let emailbox = document.querySelector(".email-box");
