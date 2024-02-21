@@ -356,7 +356,10 @@ a:focus-visible {
     "proje-head proje-head proje-head proje-head"
     "proje-task proje-task proje-role proje-role"
     "proje-image proje-image proje-image proje-image"
-    "proje-details proje-details proje-details proje-details";
+    "proje-details proje-details proje-details proje-details"
+    "design-maq design-maq design-maq design-maq"
+    "product-img1 product-img1 product-img2 product-img2"
+    "product-img3 product-img3 product-img3 product-img3";
   padding: 10px 50px;
 }
 
@@ -623,7 +626,7 @@ h2 {
 .content__text {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "aim solution"
     "how  achieved";
@@ -671,8 +674,10 @@ h2 {
       "proje-image proje-image proje-image proje-image"
       "proje-task proje-task proje-task proje-task "
       "proje-role proje-role proje-role proje-role"
-      "proje-details proje-details proje-details proje-details";
-    padding: 10px 50px;
+      "proje-details proje-details proje-details proje-details"
+      "design-maq design-maq design-maq design-maq"
+      "product-img1 product-img1 product-img2 product-img2"
+      "product-img3 product-img3 product-img3 product-img3";
   }
   .project-task {
     font-weight: 300;
@@ -688,6 +693,24 @@ h2 {
 @media screen and (max-width: 570px) {
   .content__text {
     padding: 0;
+    grid-template-rows: 60px 1fr 60px;
+  }
+  .design-marquee {
+    grid-area: design-maq;
+    height: max-content;
+  }
+  .content-works {
+    grid-template-areas:
+      "backbutton ... case-no case-no"
+      "proje-head proje-head proje-head proje-head"
+      "proje-image proje-image proje-image proje-image"
+      "proje-task proje-task proje-task proje-task "
+      "proje-role proje-role proje-role proje-role"
+      "proje-details proje-details proje-details proje-details"
+      "design-maq design-maq design-maq design-maq"
+      "product-img1 product-img1 product-img1 product-img1"
+      "product-img2 product-img2 product-img2 product-img2"
+      "product-img3 product-img3 product-img3 product-img3";
   }
 }
 
@@ -700,18 +723,6 @@ h2 {
   }
 }
 
-/* .project-image img {
-  mask-image: url(https://tuxkarma.co/wp-content/themes/karma/img/formes/1b.svg);
-  -webkit-mask-image: url(https://tuxkarma.co/wp-content/themes/karma/img/formes/1b.svg);
-  mask-repeat: no-repeat;
-} */
-
-/* .project-image img {
-  mask-image: url(https://i.postimg.cc/kgBSj8Zz/Masquerade.png);
-  mask-repeat: no-repeat;
-  -webkit-mask-image: url(https://i.postimg.cc/kgBSj8Zz/Masquerade.png);
-  -webkit-mask-repeat: no-repeat;
-} */
 .innerImg .innerMask {
   display: block;
   mask-size: cover;
@@ -732,4 +743,49 @@ h2 {
   width: 100%;
   display: block;
   height: 100%;
+}
+
+/* // */
+
+.product-image1,
+.product-image2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+.product-image1 {
+  grid-area: product-img1;
+  border-radius: 25px;
+}
+
+.product-image2 {
+  grid-area: product-img2;
+  border-radius: 25px;
+}
+
+.product-image3 {
+  grid-area: product-img3;
+  border-radius: 25px;
+  max-height: 500px;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.product-image1 img,
+.product-image2 img,
+.product-image3 img {
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+
+.design-marquee {
+  grid-area: design-maq;
+  max-height: 270px;
 }

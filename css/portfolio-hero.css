@@ -1923,9 +1923,6 @@ main {
   white-space: nowrap;
   --marquee-animation-duration: 40s;
   font-family: var(--font-2);
-  /* background: url(https://i.postimg.cc/gjxwDng3/gradient-color.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .u-marquee {
