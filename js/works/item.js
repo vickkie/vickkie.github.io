@@ -260,7 +260,7 @@ export class Item {
         "start"
       )
 
-      .to(".slide--6", {
+      .to(".free-time", {
         zIndex: 2,
       })
       // same for the content text. These will translate on the y-axis and also fade in
@@ -453,7 +453,7 @@ export class Item {
         "start+=0.4"
       )
 
-      .to(".slide--6", {
+      .to(".free-time", {
         zIndex: 3,
       })
       .to(
