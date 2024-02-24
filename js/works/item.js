@@ -75,6 +75,10 @@ export class Item {
 
     this.DOM.contentElText = [...this.DOM.contentEl.querySelectorAll(".content__detail > *")];
     this.DOM.imageMain = this.DOM.contentEl.querySelector(".project-image");
+    this.DOM.marquee = this.DOM.contentEl.querySelector(".design-marquee");
+    this.DOM.projeimage1 = this.DOM.contentEl.querySelector(".product-image1");
+    this.DOM.projeimage2 = this.DOM.contentEl.querySelector(".product-image2");
+    this.DOM.projeimage3 = this.DOM.contentEl.querySelector(".product-image3");
   }
   initEvents() {
     this.DOM.enterAction.addEventListener("mouseenter", () => this.onMouseEnter());
@@ -408,6 +412,53 @@ export class Item {
         },
         "start+=1"
       )
+
+      //animate marquee sideways to opacity
+      .to(
+        this.DOM.marquee,
+        {
+          duration: 0.5,
+          ease: "power4.in",
+          opacity: 1,
+          y: "0%",
+          x: "0",
+        },
+        "start+1"
+      )
+      //now animate images sideways to scaleY fully
+      .to(
+        this.DOM.projeimage1,
+        {
+          duration: 0.5,
+          ease: "power4.in",
+          opacity: 1,
+          scaleX: "100%",
+          scaleY: "100%",
+        },
+        "start"
+      )
+      .to(
+        this.DOM.projeimage2,
+        {
+          duration: 0.5,
+          ease: "power4.in",
+          opacity: 1,
+          scaleX: "100%",
+          scaleY: "100%",
+        },
+        "start"
+      )
+      .to(
+        this.DOM.projeimage3,
+        {
+          duration: 0.5,
+          ease: "power3.in",
+          opacity: 1,
+          scaleX: "100%",
+          scaleY: "100%",
+        },
+        "start"
+      )
       .to(
         ".portfolio-map",
         {
@@ -510,6 +561,50 @@ export class Item {
           ease: "power4.in",
           opacity: 0,
           y: "20%",
+        },
+        "start"
+      )
+      .to(
+        this.DOM.marquee,
+        {
+          duration: 0.7,
+          ease: "power4.in",
+          opacity: 0,
+          y: "20%",
+          x: "200",
+        },
+        "start"
+      )
+      .to(
+        this.DOM.projeimage1,
+        {
+          duration: 0.5,
+          ease: "power3.in",
+          opacity: 0,
+          scaleX: "80%",
+          scaleY: "20%",
+        },
+        "start"
+      )
+      .to(
+        this.DOM.projeimage2,
+        {
+          duration: 0.5,
+          ease: "power3.in",
+          opacity: 0,
+          scaleX: "80%",
+          scaleY: "20%",
+        },
+        "start"
+      )
+      .to(
+        this.DOM.projeimage3,
+        {
+          duration: 0.5,
+          ease: "power3.in",
+          opacity: 0,
+          scaleX: "80%",
+          scaleY: "20%",
         },
         "start"
       )
