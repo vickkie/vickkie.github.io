@@ -82,6 +82,11 @@ a:focus-visible {
   background-color: var(--color-bg);
 }
 
+.field-year-abibae {
+  grid-area: abibae;
+  padding-top: 30px;
+  text-align: center;
+}
 .frame {
   position: relative;
 }
@@ -359,8 +364,9 @@ a:focus-visible {
     "proje-details proje-details proje-details proje-details"
     "design-maq design-maq design-maq design-maq"
     "product-img1 product-img1 product-img2 product-img2"
-    "product-img3 product-img3 product-img3 product-img3";
-  padding: 10px 50px;
+    "product-img3 product-img3 product-img3 product-img3"
+    "abibae abibae abibae abibae";
+  padding: 10px 30px;
 }
 
 .content__article--open ~ .content__back {
@@ -677,7 +683,8 @@ h2 {
       "proje-details proje-details proje-details proje-details"
       "design-maq design-maq design-maq design-maq"
       "product-img1 product-img1 product-img2 product-img2"
-      "product-img3 product-img3 product-img3 product-img3";
+      "product-img3 product-img3 product-img3 product-img3"
+      "abibae abibae abibae";
   }
   .project-task {
     font-weight: 300;
@@ -710,7 +717,8 @@ h2 {
       "design-maq design-maq design-maq design-maq"
       "product-img1 product-img1 product-img1 product-img1"
       "product-img2 product-img2 product-img2 product-img2"
-      "product-img3 product-img3 product-img3 product-img3";
+      "product-img3 product-img3 product-img3 product-img3"
+      "abibae abibae abibae abibae";
   }
 }
 
