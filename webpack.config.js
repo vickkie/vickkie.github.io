@@ -2,8 +2,9 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: "development", // Set mode to development
-  entry: "./main.js", // Use main.js as the entry point
+  mode: "development", //mode to development
+  //   mode: "production",
+  entry: "./main.js", // main.js as the entry point
   output: {
     filename: "bundle.js", // Output file name
     path: path.resolve(__dirname, "dist"), // Output directory
@@ -19,8 +20,21 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: "index.html", to: "index.html" }, // Copy index.html to the output directory
+        { from: "index.html", to: "index.html" },
+        { from: "manifest.json", to: "manifest.json" },
+        { from: "call-worker.js", to: "call-worker.js" },
+        { from: "offline-uzitrake.js", to: "offline-uzitrake.js" },
+        { from: "offline.html", to: "index.html" },
+        { from: "backup.html", to: "backup.html" },
+        { from: "css", to: "css" },
+        { from: "fonts", to: "fonts" },
+        { from: "img", to: "img" },
+        { from: "js", to: "js" },
+        { from: "libs-js", to: "libs-js" },
+        { from: "works", to: "works" },
+        { from: "~partytown", to: "~partytown" },
       ],
     }),
   ],
+  //   devtool: false,
 };
