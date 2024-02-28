@@ -1,12 +1,1 @@
-// const imagesLoaded = require('imagesloaded');
-
-// Preload images
-const preloadImages = (selector = 'img') => {
-    return new Promise((resolve) => {
-        imagesLoaded(document.querySelectorAll(selector), {background: true}, resolve);
-    });
-};
-
-export { 
-    preloadImages
-};
+const preloadImages=(e="img")=>new Promise((o=>{imagesLoaded(document.querySelectorAll(e),{background:!0},o)}));export{preloadImages};
