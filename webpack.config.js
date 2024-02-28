@@ -1,9 +1,10 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const partytown = require("@builder.io/partytown/utils");
 
 module.exports = {
-  mode: "development", //mode to development
-  //   mode: "production",
+  // mode: "development", //mode to development
+  mode: "production",
   entry: "./main.js", // main.js as the entry point
   output: {
     filename: "bundle.js", // Output file name
@@ -24,7 +25,7 @@ module.exports = {
         { from: "manifest.json", to: "manifest.json" },
         { from: "call-worker.js", to: "call-worker.js" },
         { from: "offline-uzitrake.js", to: "offline-uzitrake.js" },
-        { from: "offline.html", to: "index.html" },
+        { from: "offline.html", to: "offline.html" },
         { from: "backup.html", to: "backup.html" },
         { from: "css", to: "css" },
         { from: "fonts", to: "fonts" },
@@ -32,9 +33,12 @@ module.exports = {
         { from: "js", to: "js" },
         { from: "libs-js", to: "libs-js" },
         { from: "works", to: "works" },
-        { from: "~partytown", to: "~partytown" },
+        {
+          from: partytown.libDirPath(),
+          to: path.join(__dirname, "dist", "~partytown"),
+        },
       ],
     }),
   ],
-  //   devtool: false,
+  devtool: false,
 };
