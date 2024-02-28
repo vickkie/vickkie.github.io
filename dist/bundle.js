@@ -15,7 +15,7 @@
   \*****************/
 /***/ (() => {
 
-eval("// main.js\nconsole.log(\"Hello, Webpack!\");\n\n\n//# sourceURL=webpack://vickkie.github.io/./main.js?");
+eval("// main.js\nif (\"serviceWorker\" in navigator) {\n  window.addEventListener(\"load\", () => {\n    navigator.serviceWorker\n      .register(\"./offline-uzitrake.js\")\n      //  .then(reg=>\n      //   // console.log('serviceWorker')\n      //   )\n      .catch((err) => console.log(\"Error:\", err));\n  });\n}\n\n\n//# sourceURL=webpack://vickkie.github.io/./main.js?");
 
 /***/ })
 
