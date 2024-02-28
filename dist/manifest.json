@@ -1,0 +1,38 @@
+{
+    "name": "Uzitrake",
+    "short_name":"Uzitrake",
+    "link":"/index.html",
+    "start_url":"/index.html",
+    "theme_color":"#e2ccff",
+    "background_color":"#fcfcfc",
+    "display":"fullscreen",
+    "orientation":"portrait",
+    "shortcuts":[],
+    "icons": [
+    
+    {
+      "src": "img/masks/maskable_icon2.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "img/masks/maskable_icon1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+  ,
+  "prefer_related_applications": false,
+   "related_applications": [
+    {
+    "platform": "play",
+    "id": "index"
+    }
+]
+
+     
+
+
+}
