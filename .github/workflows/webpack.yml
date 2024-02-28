@@ -15,10 +15,12 @@ jobs:
         node-version: [20]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4 # Update to version 4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2 # Update to version 2
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -26,10 +28,9 @@ jobs:
         run: |
           npm install
           npx webpack
-          
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4 # Update to version 4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.WORK_DEPLOY }}
           publish_dir: ./dist
