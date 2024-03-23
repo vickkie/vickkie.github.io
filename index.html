@@ -21,6 +21,7 @@
     <link fetchpriority="high" rel="preload" href="img/works/20.webp" as="image" />
     <link fetchpriority="high" rel="preload" href="img/works/16.webp" as="image" />
     <link fetchpriority="high" rel="preload" href="img/works/26.webp" as="image" />
+    <link rel="manifest" href="manifest.json" />
 
     <script src="js/lazysizes.min.js"></script>
 
@@ -40,8 +41,24 @@
         document.body.appendChild(script);
       }
     </script>
+    <script src="/~partytown/partytown.js"></script>
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-F0NF6J8B0H"></script>
 
-    <link rel="manifest" href="manifest.json" />
+    <script>
+      partytown = {
+        forward: ["dataLayer.push"],
+      };
+    </script>
+    <script type="text/partytown">
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-F0NF6J8B0H");
+    </script>
   </head>
 
   <body class="loading menu-will-open noscroll">
@@ -1525,21 +1542,8 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/magnetic.js"></script>
     <script src="js/scrolltoplugin.js"></script>
-    <!-- <script defer src="js/main.js"></script>  -->
 
-    <!-- <script type="text/javascript" src="/~partytown/partytown.js"></script> -->
-    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-F0NF6J8B0H"></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-F0NF6J8B0H");
-    </script>
-
-    <script type="text/partytown">
+    <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
           c[a] ||
