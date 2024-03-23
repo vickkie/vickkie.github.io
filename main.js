@@ -29,3 +29,5 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTime();
   }, 1000);
 });
+
+//Group 3:

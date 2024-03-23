@@ -611,7 +611,7 @@ lettertl.to(chars[11], { rotation: 360 });
 
 let emailbox = document.querySelector(".email-box");
 
-// Group 13: darkmode if user browser prefers
+//  Group 13: darkmode if user browser prefers
 
 // if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
 //   // User prefers dark mode, add the dark-mode class to the body element
