@@ -4,12 +4,9 @@ const cacheName = "uzitrake-offline";
 // }
 
 let offlineUrl = "offline.html";
+let offlineFont = "fonts/DiamondGrotesk.woff";
 
-const cacheAssets = [
-  offlineUrl,
-  // '../assets/svg/trakexcel-t.svg',
-  "fonts/DiamondGrotesk.woff",
-];
+const cacheAssets = [offlineUrl, offlineFont];
 
 //call install event
 
