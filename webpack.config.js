@@ -2,13 +2,20 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // Import the plugin
 const partytown = require("@builder.io/partytown/utils");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./main.js",
+  entry: {
+    main: "./main.js",
+  },
+
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "public"),
   },
   module: {
     rules: [
@@ -17,6 +24,10 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin(), new HtmlMinimizerPlugin()],
   },
   plugins: [
     new CopyWebpackPlugin({
@@ -35,15 +46,24 @@ module.exports = {
         { from: "works", to: "works" },
         {
           from: partytown.libDirPath(),
-          to: path.join(__dirname, "dist", "~partytown"),
+          to: path.join(__dirname, "public", "~partytown"),
         },
       ],
     }),
     new HtmlWebpackPlugin({
-      template: "./index.html", // Path to your HTML file
-      filename: "index.html", // Output HTML file name
-      inject: "body", // Where to inject the generated script tags
+      template: "./index.html",
+      filename: "index.html",
+      inject: "body",
+      chunks: ["main"],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+      },
     }),
+    new CleanWebpackPlugin(),
   ],
+
   devtool: false,
 };
