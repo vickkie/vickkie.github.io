@@ -1,5 +1,8 @@
 //this is for test purpose only
 // if using in building use http-server public
+
+// install it using npm install -g http-server
+
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
