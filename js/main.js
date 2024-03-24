@@ -1,6 +1,4 @@
 // Group 0: service worker
-
-import { partytownSnippet } from "@builder.io/partytown/integration";
 // main.js
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -12,11 +10,6 @@ if ("serviceWorker" in navigator) {
       .catch((err) => console.log("Error:", err));
   });
 }
-
-const snippetText = partytownSnippet();
-const el = document.createElement("script");
-el.innerText = snippetText;
-document.body.appendChild(el);
 
 //Group 1; code to update time
 document.addEventListener("DOMContentLoaded", function () {
