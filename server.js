@@ -1,5 +1,5 @@
 //this is for test purpose only
-
+// if using in building use http-server public
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
