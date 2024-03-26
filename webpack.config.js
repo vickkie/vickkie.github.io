@@ -40,6 +40,7 @@ module.exports = {
         { from: "backup.html", to: "backup.html" },
         { from: "css", to: "css" },
         { from: "fonts", to: "fonts" },
+        { from: "videos", to: "videos" },
         { from: "img", to: "img" },
         { from: "js", to: "js" },
         { from: "libs-js", to: "libs-js" },
