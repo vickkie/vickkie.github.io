@@ -14,6 +14,18 @@ if ("serviceWorker" in navigator) {
   });
 }
 
+// // Call the splittingjs to transform the data-splitting texts to spans of chars
+// Splitting();
+
+const splitchars = document.querySelectorAll(".split-char");
+
+splitchars.forEach((splitchar) => {
+  new SplitText(splitchar, {
+    type: "chars",
+    charsClass: "char",
+  });
+});
+
 //Group 1; code to update time
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
@@ -195,13 +207,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Group 6 : folding of text from opaCITY AnimaTION
 
-    const fx28Titles = [...selectAll("[data-splitting][data-effect28]")];
+    const fx28Titles = [...selectAll("[data-effect28]")];
 
     if (fx28Titles) {
       gsap.registerPlugin(ScrollTrigger);
       gsap.registerPlugin(SplitText);
 
-      let title = new SplitText("[data-splitting][data-effect28]", {
+      let title = new SplitText("[data-effect28]", {
         type: "words,lines,chars",
         wordsClass: "content__title word",
         charsClass: "char",
@@ -536,7 +548,7 @@ function copyToClipboard(text) {
 const text3d = () => {
   if (innerWidth > 767) {
     gsap.registerPlugin(ScrollTrigger);
-    const fx19Titles = [...selectAll("[data-splitting][data-effect19]")];
+    const fx19Titles = [...selectAll("[data-effect19]")];
 
     fx19Titles.forEach((title) => {
       const chars = title.querySelectorAll(".char");

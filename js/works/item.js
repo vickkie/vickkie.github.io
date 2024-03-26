@@ -8,7 +8,8 @@ import { calcWinsize, wrapElements } from "./utils.js";
 // import Splitting from "splitting";
 
 // initialize Splitting
-const splitting = Splitting();
+
+Splitting();
 
 // Calculate the viewport size
 let winsize = calcWinsize();
