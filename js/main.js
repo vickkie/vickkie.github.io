@@ -292,10 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
         //  let gallerypic = querySelector(".gallery__item-imginner");
         let imageSet = element.getAttribute("data-image");
 
-        // console.log(element, imageSet, i);
-        // element.style.backgroundImage = `${imageSet}`;
-        // element.setAttribute("style", `background:${imageSet}`);
-
         let timeline = gsap.timeline();
 
         timeline
