@@ -1,0 +1,1 @@
+const lerp=(e,o,t)=>(1-t)*e+t*o,getMousePos=e=>({x:e.clientX,y:e.clientY});export{lerp,getMousePos};
