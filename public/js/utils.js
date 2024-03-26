@@ -1,1 +1,0 @@
-const preloadImages=(e="img")=>new Promise((o=>{imagesLoaded(document.querySelectorAll(e),{background:!0},o)}));export{preloadImages};
