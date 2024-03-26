@@ -609,7 +609,7 @@ main {
   grid-template-rows: 10vh 30vh 1fr 1fr;
   min-height: 100vh;
   max-height: fit-content;
-  width: 100vw;
+  width: 100%;
   transition: all 0.3s linear;
   padding: 20vh 0 2vh 0;
   position: relative;
@@ -1401,7 +1401,7 @@ main {
 .free-time {
   height: fit-content;
   min-height: 100svh;
-  width: 100vw;
+  width: 100%;
   display: grid;
   background-color: var(--thistle);
   border-top-left-radius: 35px;
