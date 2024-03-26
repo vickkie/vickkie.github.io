@@ -20,6 +20,28 @@ const openMenuCtrl = document.querySelector("button.button-menu");
 // close menu button
 const closeMenuCtrl = menuWrap.querySelector(".button-close");
 
+// Function to  close the menu when link inside is clicked
+
+let locationButtons = document.querySelectorAll(".menu__item");
+locationButtons.forEach((locationButton, i) => {
+  locationButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let location = locationButton.getAttribute("href");
+    closeMenu();
+    [document.body, document.documentElement].forEach((el) => el.classList.remove("menu-is-open"));
+
+    gsap.registerPlugin(ScrollToPlugin);
+    setTimeout(() => {
+      gsap.to(window, {
+        duration: 5,
+        scrollTo: location,
+        ease: Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    }, 1600);
+  });
+});
+
 // big title elements
 const title = {
   main: document.querySelector(".content__l1"),
