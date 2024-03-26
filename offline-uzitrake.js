@@ -1,3 +1,5 @@
+//custom serviceWorker
+
 const cacheName = "uzitrake-offline";
 // var cacheName = {
 //     offline: 'uzitrake-offline' + cacheVersion,
