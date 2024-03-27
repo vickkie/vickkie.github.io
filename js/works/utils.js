@@ -57,13 +57,15 @@ const wrapElements = (elems, wrapType, wrapClass) => {
 };
 
 const abibae = () => {
-  let mainDivs = document.querySelectorAll(".field-year-abibae");
+  let mainDivs = document.querySelectorAll(".content-works");
   mainDivs.forEach((mainDiv) => {
     let newDiv = document.createElement("div");
+    newDiv.classList = "field-year-abibae";
+    mainDiv.appendChild(newDiv);
+
     let paragraph = document.createElement("p");
     paragraph.textContent = "Copyright uzitrake @2024";
     newDiv.appendChild(paragraph);
-    mainDiv.appendChild(newDiv);
   });
 };
 
