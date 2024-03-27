@@ -1,13 +1,5 @@
-// import { gsap } from './gsap.min.js';
 import { MagneticFx } from "./magneticFx.js";
 import { calcWinsize, wrapElements } from "./utils.js";
-// import { wrap } from 'gsap/gsap-core';
-
-// import "splitting/dist/splitting.css";
-// import "splitting/dist/splitting-cells.css";
-// import Splitting from "splitting";
-
-// initialize Splitting
 
 Splitting();
 
@@ -65,7 +57,9 @@ export class Item {
   }
   editHeadingLayout() {
     this.DOM.heading = this.DOM.el.querySelector(".heading--item");
+
     this.DOM.itemHeadingChars = [...this.DOM.heading.querySelectorAll(".char")];
+
     wrapElements(this.DOM.itemHeadingChars, "span", "char-wrap");
   }
   editContentLayout() {

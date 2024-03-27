@@ -1,7 +1,6 @@
 import { preloadImages } from "./utils.js";
-// preload images then remove loader (loading class)
-preloadImages(".tiles__line-img").then(() => document.body.classList.remove("loading"));
 
+preloadImages(".tiles__line-img").then(() => document.body.classList.remove("loading"));
 // frame element
 const frame = document.querySelector(".frame");
 
