@@ -4,7 +4,10 @@ export class MenuItem {
   constructor(el) {
     this.DOM = { el };
     // all text chars (Splittingjs)
-    this.DOM.titleChars = this.DOM.el.querySelectorAll("span.char");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      this.DOM.titleChars = this.DOM.el.querySelectorAll(".char");
+    });
 
     // initial and final colors for each span char (before and after hovering)
     //reminder: remove setInterval and implement

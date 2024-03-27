@@ -21,9 +21,10 @@
     <link fetchpriority="high" rel="preload" href="img/works/20.webp" as="image" />
     <link fetchpriority="high" rel="preload" href="img/works/16.webp" as="image" />
     <link fetchpriority="high" rel="preload" href="img/works/26.webp" as="image" />
+    <link rel="manifest" href="manifest.json" />
 
+    <script src="libs-js/imagesloaded.pkgd.js"></script>
     <script src="js/lazysizes.min.js"></script>
-
     <script>
       if ("loading" in HTMLImageElement.prototype) {
         const images = document.querySelectorAll('img[loading="lazy"]');
@@ -40,8 +41,24 @@
         document.body.appendChild(script);
       }
     </script>
+    <script src="/~partytown/partytown.js"></script>
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-F0NF6J8B0H"></script>
 
-    <link rel="manifest" href="manifest.json" />
+    <script>
+      partytown = {
+        forward: ["dataLayer.push"],
+      };
+    </script>
+    <script type="text/partytown">
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-F0NF6J8B0H");
+    </script>
   </head>
 
   <body class="loading menu-will-open noscroll">
@@ -51,7 +68,7 @@
       <div class="overlay__row"></div>
       <div class="overlay__row"></div>
 
-      <h1 class="title-uzi" data-splitting="">Uzitrake</h1>
+      <h1 class="title-uzi split-chars">Uzitrake</h1>
 
       <div class="gallery">
         <figure data-scroll class="gallery__item">
@@ -247,13 +264,7 @@
             </svg>
           </button>
         </div>
-        <!-- <div class="frame__contact" data-cursor="-hidden">
-          <span>CONTACT</span>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 0V12" stroke="var(--bright-thistle)" stroke-width="2" stroke-miterlimit="10" />
-            <path d="M12 6H0" stroke="var(--bright-thistle)" stroke-width="2" stroke-miterlimit="10" />
-          </svg>
-        </div> -->
+
         <div class="frame__line"></div>
       </div>
       <div class="content-hero">
@@ -332,17 +343,17 @@
       <div class="menu-wrap">
         <main>
           <nav class="menu">
-            <a href="#slide--6 " class="menu__item">
-              <span data-splitting class="menu__item-title">Contact</span>
-              <span data-splitting class="menu__item-sub">reach me</span>
+            <a href="#freetime" class="menu__item">
+              <span class="split-char-title menu__item-title">Contact</span>
+              <span class="split-char-title menu__item-sub">reach me</span>
             </a>
-            <a href="#content-1" class="menu__item menu-work">
-              <span data-splitting class="menu__item-title">Work</span>
-              <span data-splitting class="menu__item-sub">cases</span>
+            <a href="#works" class="menu__item menu-work">
+              <span class="split-char-title menu__item-title">Work</span>
+              <span class="split-char-title menu__item-sub">cases</span>
             </a>
-            <a href="#slide--6 " class="menu__item">
-              <span data-splitting class="menu__item-title">Socials</span>
-              <span data-splitting class="menu__item-sub">follow</span>
+            <a href="#contactme " class="menu__item">
+              <span class="split-char-title menu__item-title">Socials</span>
+              <span class="split-char-title menu__item-sub">follow</span>
             </a>
           </nav>
         </main>
@@ -353,7 +364,7 @@
               <div
                 class="gallery__item-imginner"
                 data-image="'img/works/12.webp'"
-                style="background-image: url(img/works/1.webp)"
+                style="background-image: url(img/works/111.jpg)"
               ></div>
             </div>
           </figure>
@@ -436,14 +447,6 @@
             />
           </svg>
         </div>
-        <link rel="stylesheet" type="text/css" href="libs-js/splitting-cells.css" />
-        <link rel="stylesheet" type="text/css" href="libs-js/splitting.css" />
-
-        <script src="libs-js/scrolltrigger.js"></script>
-        <script src="libs-js/splitting.min.js"></script>
-        <script src="libs-js/gsap.min.js"></script>
-
-        <script type="module" src="js/distort/index.js"></script>
 
         <button class="unbutton button-close" aria-label="close menu" data-cursor="-hidden">
           <svg class="icon icon-cursor icon--menuUzi">
@@ -526,13 +529,13 @@
           <div class="dev-header">
             Hey there! I'm Uzitrake.<br />A <span class="tomato">Digital Designer</span> <br />Based in Kenya(KE)
           </div>
-          <!-- <div class="dev-subheader">LEAD DEVELOPER, TRAKEXCEL</div> -->
+
           <div class="head-desc">
             <div class="desc-1">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 0V12" stroke="var(--bright-thistle)" stroke-width="2" stroke-miterlimit="10" />
                 <path d="M12 6H0" stroke="var(--bright-thistle)" stroke-width="2" stroke-miterlimit="10" /></svg
-              ><span> Current works : TRAKEXCEL STUDIO</span>
+              ><span> Current works : HYPERCRITICAL STUDIO</span>
             </div>
             <div class="desc-2">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -598,9 +601,9 @@
             <!-- 🧠 image hosted on Webflow + clip path reference -->
             <image
               clip-path="url(#e-letter)"
-              xlink:href="img/works/12.webp"
+              xlink:href="img/works/portfolio/uzitrake8.webp"
               alt="Image"
-              width="100%"
+              height="100%"
               class="e-letter"
             ></image>
           </svg>
@@ -612,7 +615,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/works.css" />
 
-    <section class="works">
+    <section class="works" id="works">
       <header class="section__header">
         <div
           style="
@@ -625,7 +628,7 @@
           <div class="caps align-c latest-tag"><img src="./img/svg/latest-project.svg" alt="😎" /></div>
         </div>
         <span class="section__year">2020</span>
-        <h2 class="section__title section__title--medium" data-splitting data-effect28>
+        <h2 class="section__title section__title--medium split-char" data-effect28>
           Selected <br />
           work
         </h2>
@@ -653,8 +656,7 @@
             </svg>
           </button>
           <h2 class="heading heading--item">
-            <span data-splitting>Lumina</span>
-            <!-- <span data-splitting>mass</span> -->
+            <span class="split-char">Lumina</span>
           </h2>
           <div class="item__meta">
             <span class="item__meta-row"><span>✺Branding</span></span>
@@ -666,6 +668,37 @@
           </div>
         </article>
         <article class="item item--invert">
+          <div class="item__imgwrap">
+            <div class="item__img" style="background-image: url(img/works/hypercritical/Hypercritical-ipad.webp)"></div>
+          </div>
+          <button class="item__enter unbutton">
+            <div class="viewcase">
+              <span class="cursor__text" data-splitting>+ view case</span>
+              <span class="hidden-explore" data-splitting>+ explore in</span>
+            </div>
+            <svg
+              class="item__enter-circle"
+              vector-effect="non-scaling-stroke"
+              width="800"
+              height="800"
+              viewBox="0 0 800 800"
+            >
+              <circle vector-effect="non-scaling-stroke" cx="400" cy="400" r="150" />
+            </svg>
+          </button>
+          <h2 class="heading heading--item">
+            <span class="split-char">Hypercritical</span>
+          </h2>
+          <div class="item__meta">
+            <span class="item__meta-row"><span>✺Web design</span></span>
+            <span class="item__meta-row"><span>March &mdash; 2024</span></span>
+            <span class="item__meta-row"><span>Hypercritical studio</span></span>
+          </div>
+          <div class="item__excerpt">
+            <a class="item__excerpt-link" href="#content-2"><span>Discover work</span></a>
+          </div>
+        </article>
+        <article class="item">
           <div class="item__imgwrap">
             <div class="item__img" style="background-image: url(img/works/trakexcel/Index-page-mid.webp)"></div>
           </div>
@@ -685,27 +718,26 @@
             </svg>
           </button>
           <h2 class="heading heading--item">
-            <span data-splitting>Trakexcel</span>
-            <!-- <span data-splitting>times</span> -->
+            <span class="split-char">Trakexcel</span>
           </h2>
           <div class="item__meta">
             <span class="item__meta-row"><span>✺Web design</span></span>
             <span class="item__meta-row"><span>March &mdash; 2023</span></span>
-            <span class="item__meta-row"><span>For Trakexcel Agency</span></span>
+            <span class="item__meta-row"><span> Trakexcel Agency</span></span>
           </div>
           <div class="item__excerpt">
-            <a class="item__excerpt-link" href="#content-2"><span>Discover work</span></a>
+            <a class="item__excerpt-link" href="#content-3"><span>Discover work</span></a>
           </div>
         </article>
 
-        <article class="item">
+        <article class="item item--invert">
           <div class="item__imgwrap">
-            <div class="item__img" style="background-image: url(img/works/dna/dna_CaseStudy_Hero.webp)"></div>
+            <div class="item__img" style="background-image: url(img/works/dna/dna-CaseStudy-Hero.webp)"></div>
           </div>
           <button class="item__enter unbutton">
             <div class="viewcase">
               <span class="cursor__text" data-splitting>+ view case</span>
-              <span class="hidden-explore" data-splitting>+ explore in</span>
+              <span class="hidden-explore" data-splitting>+ explore </span>
             </div>
             <svg
               class="item__enter-circle"
@@ -718,8 +750,7 @@
             </svg>
           </button>
           <h2 class="heading heading--item">
-            <span data-splitting>DNAnexus</span>
-            <!-- <span data-splitting>prime</span> -->
+            <span class="split-char">DNAnexus</span>
           </h2>
           <div class="item__meta">
             <span class="item__meta-row"><span>✺Brand design</span></span>
@@ -730,9 +761,9 @@
             <a class="item__excerpt-link" href="#content-5"><span>Discover work</span></a>
           </div>
         </article>
-        <article class="item item--invert">
+        <article class="item">
           <div class="item__imgwrap">
-            <div class="item__img" style="background-image: url(img/works/portfolio/main-mockup-high.webp)"></div>
+            <div class="item__img" style="background-image: url(img/works/portfolio/uziport-multi-high.webp)"></div>
           </div>
           <button class="item__enter unbutton">
             <div class="viewcase">
@@ -749,8 +780,7 @@
             </svg>
           </button>
           <h2 class="heading heading--item">
-            <span data-splitting>Uzitrake</span>
-            <!-- <span data-splitting>leap</span> -->
+            <span class="split-char">Uzitrake</span>
           </h2>
           <div class="item__meta">
             <span class="item__meta-row"><span>✺Web Design</span></span>
@@ -758,14 +788,14 @@
             <span class="item__meta-row"><span>Personal </span></span>
           </div>
           <div class="item__excerpt">
-            <a class="item__excerpt-link" href="#content-6"><span>Discover work</span></a>
+            <a class="item__excerpt-link" href="#content-4"><span>Discover work</span></a>
           </div>
         </article>
       </section>
       <section class="more-work">
         <div class="great-work"><img src="img/svg/great-work.svg" alt="great work above" /></div>
         <div class="where-morework">
-          <span data-effect19 data-splitting>Discover more work <br />On socials ❈</span>
+          <span data-effect19 class="split-char">Discover more work <br />On socials ❈</span>
         </div>
 
         <div class="logo-work">
@@ -782,7 +812,7 @@
         <article class="content__article" id="content-1">
           <div class="content-works">
             <h2 class="heading">
-              <span data-splitting>Lumina</span>
+              <span class="split-char">Lumina</span>
             </h2>
             <div class="case-no">CASE 01-04</div>
             <div class="project-task content__detail">
@@ -794,7 +824,7 @@
               </p>
               <p><span class="landing-font">FIELD - </span>BRANDING ,DESIGN</p>
             </div>
-            <div class="field-year-abibae"></div>
+            <!--  -->
 
             <div class="project-role content__detail">
               <p><span class="landing-font">ROLE - </span>Art designer,Designer</p>
@@ -902,7 +932,114 @@
         <article class="content__article content__article--invert" id="content-2">
           <div class="content-works">
             <h2 class="heading">
-              <span data-splitting>Trakexcel</span>
+              <span class="split-char">Hypercritical</span>
+            </h2>
+            <div class="case-no">CASE 02-04</div>
+            <div class="project-task content__detail">
+              <p>
+                <span class="landing-font">TASK- </span>My objective was to design a website for Hypercritical web
+                design studio that is exceptionally attractive and visually appealing. Every aspect of the design was
+                crafted to captivate visitors and leave a lasting impression, ensuring that the website stands out
+                amidst the digital landscape.
+              </p>
+
+              <p><span class="landing-font">FIELD - </span>Web Development</p>
+            </div>
+
+            <div class="project-role content__detail">
+              <p><span class="landing-font">ROLE - </span>Designer / Programmer</p>
+              <p>
+                <span class="landing-font">RECOGNITION - </span>Our website has garnered attention for its innovative
+                design and user-friendly interface. It has been praised by industry experts and users alike for its
+                intuitive navigation and engaging content, establishing it as a standout platform in our field.
+              </p>
+            </div>
+            <div class="content__text content__detail">
+              <div class="project-aim">
+                <div class="main-aim">
+                  <span>Problem ➺</span>
+                </div>
+              </div>
+              <div class="project-problem mid-font">
+                <p>
+                  Hypercritical Studio, renowned for its exacting standards in website and app design, embarked on a
+                  mission to redefine commitment and demonstrate its prowess to partners. Tasked with this challenge, we
+                  undertook to elevate their vision, recognizing the pivotal role of captivating design in resonating
+                  with their target audience. As our collaboration unfolded, our focus naturally extended to optimizing
+                  user engagement and refining the user experience.
+                </p>
+              </div>
+              <div class="how-solution">
+                <div class="main-aim">
+                  <span>Solution ➺</span>
+                </div>
+              </div>
+              <div class="achieved-solution mid-font">
+                <p>
+                  <br />
+
+                  Our journey with Hypercritical Studio encompassed the development of a visually arresting design
+                  system and the meticulous refinement of digital touchpoints to ensure a frictionless user journey
+                  across all platforms. Working in tandem with the some collaborators, we delved deep into the vision
+                  and objectives, harnessing innovative design strategies to drive impactful results.
+                </p>
+              </div>
+            </div>
+            <div class="project-image">
+              <img
+                data-src="img/works/hypercritical/Hypercritical-Macbook-Air-M2psd-0-2.webp "
+                srcset="
+                  img/works/hypercritical/Hypercritical-Macbook-Air-M2psd-0-2.webp  500w,
+                  img/works/hypercritical/Hypercritical-Macbook-Air-M2psd-0-2.webp 1500w,
+                  img/works/hypercritical/Hypercritical-Macbook-Air-M2psd-0-2.webp 2000w
+                "
+                sizes="(max-width:  500px)  500px, (max-width:  1500px)  1500px,  2000px"
+                alt="project image"
+                class="lazyload"
+              />
+            </div>
+
+            <div class="design-marquee u-marquee app-footer__marquee">
+              <div class="u-marquee__content">✻ &nbsp;DESIGNS&nbsp; ✻ &nbsp;DESIGNS&nbsp;</div>
+              <div aria-hidden="true" class="u-marquee__content">✻ &nbsp;DESIGNS&nbsp; ✻ &nbsp;DESIGNS&nbsp;</div>
+            </div>
+
+            <div class="product-image1">
+              <img
+                data-src="img/works/hypercritical/hypercritical-menu.webp  "
+                srcset="
+                  img/works/hypercritical/hypercritical-menu.webp  350w,
+                  img/works/hypercritical/hypercritical-menu.webp  500w,
+                  img/works/hypercritical/hypercritical-menu.webp 1300w,
+                  img/works/hypercritical/hypercritical-menu.webp 1800w,
+                  img/works/hypercritical/hypercritical-menu.webp 3000w
+                "
+                sizes="(max-width: 360px) 100vw, (max-width: 600px) 90vw, (max-width: 1200px) 80vw, 1000px"
+                class="lazyload"
+                alt="Screenshot of Hypercritical studio design"
+              />
+            </div>
+
+            <div class="product-image2">
+              <img
+                data-src="img/works/hypercritical/works-iphone.webp"
+                srcset="
+                  img/works/hypercritical/works-iphone.webp  500w,
+                  img/works/hypercritical/works-iphone.webp 1300w,
+                  img/works/hypercritical/works-iphone.webp 2000w
+                "
+                sizes="(max-width: 600px) 90vw, (max-width: 1200px) 80vw, 1000px"
+                alt="trakexcel design on laptop"
+                class="lazyload"
+              />
+            </div>
+            <div class="product-image3"></div>
+          </div>
+        </article>
+        <article class="content__article content__article--invert" id="content-3">
+          <div class="content-works">
+            <h2 class="heading">
+              <span class="split-char">Trakexcel</span>
             </h2>
             <div class="case-no">CASE 02-04</div>
             <div class="project-task content__detail">
@@ -915,7 +1052,6 @@
 
               <p><span class="landing-font">FIELD - </span>Web Development</p>
             </div>
-            <div class="field-year-abibae"></div>
 
             <div class="project-role content__detail">
               <p><span class="landing-font">ROLE - </span>Lead Programmer</p>
@@ -1014,99 +1150,10 @@
             <div class="product-image3"></div>
           </div>
         </article>
-
-        <article class="content__article" id="content-5">
+        <article class="content__article content__article--invert" id="content-4">
           <div class="content-works">
             <h2 class="heading">
-              <span data-splitting>DNAnexus</span>
-            </h2>
-            <div class="case-no">CASE 03-04</div>
-            <div class="project-task content__detail">
-              <p>
-                <span class="landing-font">TASK - </span>Refining and enhancing the user interface and design of their
-                platform, akin to the meticulous arrangement of five Imprimaturs on a title-page
-              </p>
-              <p><span class="landing-font">FIELD - </span>RE-BRANDING, DESIGN</p>
-            </div>
-            <div class="field-year-abibae"></div>
-
-            <div class="project-role content__detail">
-              <p><span class="landing-font">ROLE - </span>Development Collaborator</p>
-              <p>
-                <span class="landing-font">RECOGNISION - </span>These are the pretty responsories, these are the dear
-                antiphonies, that so bewitched of late our prelates and their chaplains with the goodly echo they made
-              </p>
-            </div>
-            <div class="content__text content__detail">
-              <div class="project-aim">
-                <div class="main-aim">
-                  <span>Problem ➺</span>
-                </div>
-              </div>
-              <div class="project-problem mid-font">
-                <p>
-                  DNAnexus, a leading provider of cloud-based data management and analysis solutions for genomics
-                  research, faced challenges in optimizing their user interface and experience for researchers and
-                  bioinformatics professionals. As the demand for genomic data analysis grew, they recognized the
-                  importance of enhancing their platform's usability and functionality to meet the evolving needs of
-                  their users. They sought a design partner with expertise in both genomics technology and user-centered
-                  design principles to help them overcome these challenges.
-                </p>
-                <br />
-                <p>
-                  This project entailed developing a robust design system and refining digital touchpoints, ensuring a
-                  seamless user experience across their app ecosystem with a design partner capable of adapting to their
-                  continuously evolving requirements.
-                </p>
-              </div>
-              <div class="how-solution">
-                <div class="main-aim">
-                  <span>Solution ➺</span>
-                </div>
-              </div>
-              <div class="achieved-solution mid-font">
-                <p>
-                  As part of our collaboration, we also focused on enhancing the mobile experience of the platform,
-                  recognizing the importance of accessibility and flexibility for users who need to access genomic data
-                  on the go. We explored innovative design concepts and interaction patterns to create a mobile
-                  interface that seamlessly complemented the desktop experience.
-                  <br />
-                  Furthermore, we developed a comprehensive design system that provided DNAnexus with a set of
-                  standardized components, styles, and guidelines for maintaining consistency and coherence across their
-                  entire platform. This design system not only facilitated faster iteration and development but also
-                  empowered DNAnexus's internal teams to collaborate more effectively and efficiently.
-                </p>
-              </div>
-            </div>
-            <div class="project-image">
-              <img data-src="img/works/dna/dna_CaseStudy_Hero.webp" class="lazyload" alt="project image" />
-            </div>
-            <div class="design-marquee u-marquee app-footer__marquee">
-              <div class="u-marquee__content">✻ &nbsp;DESIGNS&nbsp; ✻ &nbsp;DESIGNS&nbsp;</div>
-              <div aria-hidden="true" class="u-marquee__content">✻ &nbsp;DESIGNS&nbsp; ✻ &nbsp;DESIGNS&nbsp;</div>
-            </div>
-
-            <div class="product-image1"></div>
-            <div class="product-image2"></div>
-            <div class="product-image3">
-              <img
-                data-src="img/works/dna/dna-mockall-high.webp"
-                srcset="
-                  img/works/dna/dna-mockall-high.webp  500w,
-                  img/works/dna/dna-mockall-high.webp 1600w,
-                  img/works/dna/dna-mockall.webp      3000w
-                "
-                class="lazyload"
-                sizes="(max-width: 600px) 90vw, (max-width: 1600px) 80vw, 1000px"
-                alt="project image"
-              />
-            </div>
-          </div>
-        </article>
-        <article class="content__article content__article--invert" id="content-6">
-          <div class="content-works">
-            <h2 class="heading">
-              <span data-splitting>Uzitrake</span>
+              <span class="split-char">Uzitrake</span>
             </h2>
             <div class="case-no">CASE 04-04</div>
             <div class="project-task content__detail">
@@ -1117,7 +1164,7 @@
               </p>
               <p><span class="landing-font">FIELD - </span>UX/UI DESIGN , PORTFOLIO</p>
             </div>
-            <div class="field-year-abibae"></div>
+
             <div class="project-role content__detail">
               <p><span class="landing-font">ROLE - </span>Designer, Developer</p>
               <p><span class="landing-font">RECOGNISION - </span>Digitally Fit Awards 2023 - Kenya</p>
@@ -1210,6 +1257,95 @@
             <div class="product-image3"></div>
           </div>
         </article>
+
+        <article class="content__article" id="content-5">
+          <div class="content-works">
+            <h2 class="heading">
+              <span class="split-char">DNAnexus</span>
+            </h2>
+            <div class="case-no">CASE 03-04</div>
+            <div class="project-task content__detail">
+              <p>
+                <span class="landing-font">TASK - </span>Refining and enhancing the user interface and design of their
+                platform, akin to the meticulous arrangement of five Imprimaturs on a title-page
+              </p>
+              <p><span class="landing-font">FIELD - </span>RE-BRANDING, DESIGN</p>
+            </div>
+
+            <div class="project-role content__detail">
+              <p><span class="landing-font">ROLE - </span>Development Collaborator</p>
+              <p>
+                <span class="landing-font">RECOGNISION - </span>These are the pretty responsories, these are the dear
+                antiphonies, that so bewitched of late our prelates and their chaplains with the goodly echo they made
+              </p>
+            </div>
+            <div class="content__text content__detail">
+              <div class="project-aim">
+                <div class="main-aim">
+                  <span>Problem ➺</span>
+                </div>
+              </div>
+              <div class="project-problem mid-font">
+                <p>
+                  DNAnexus, a leading provider of cloud-based data management and analysis solutions for genomics
+                  research, faced challenges in optimizing their user interface and experience for researchers and
+                  bioinformatics professionals. As the demand for genomic data analysis grew, they recognized the
+                  importance of enhancing their platform's usability and functionality to meet the evolving needs of
+                  their users. They sought a design partner with expertise in both genomics technology and user-centered
+                  design principles to help them overcome these challenges.
+                </p>
+                <br />
+                <p>
+                  This project entailed developing a robust design system and refining digital touchpoints, ensuring a
+                  seamless user experience across their app ecosystem with a design partner capable of adapting to their
+                  continuously evolving requirements.
+                </p>
+              </div>
+              <div class="how-solution">
+                <div class="main-aim">
+                  <span>Solution ➺</span>
+                </div>
+              </div>
+              <div class="achieved-solution mid-font">
+                <p>
+                  As part of our collaboration, we also focused on enhancing the mobile experience of the platform,
+                  recognizing the importance of accessibility and flexibility for users who need to access genomic data
+                  on the go. We explored innovative design concepts and interaction patterns to create a mobile
+                  interface that seamlessly complemented the desktop experience.
+                  <br />
+                  Furthermore, we developed a comprehensive design system that provided DNAnexus with a set of
+                  standardized components, styles, and guidelines for maintaining consistency and coherence across their
+                  entire platform. This design system not only facilitated faster iteration and development but also
+                  empowered DNAnexus's internal teams to collaborate more effectively and efficiently.
+                </p>
+              </div>
+            </div>
+            <div class="project-image">
+              <img data-src="img/works/dna/dna-CaseStudy-Hero.webp" class="lazyload" alt="project image" />
+            </div>
+            <div class="design-marquee u-marquee app-footer__marquee">
+              <div class="u-marquee__content">✻ &nbsp;DESIGNS&nbsp; ✻ &nbsp;DESIGNS&nbsp;</div>
+              <div aria-hidden="true" class="u-marquee__content">✻ &nbsp;DESIGNS&nbsp; ✻ &nbsp;DESIGNS&nbsp;</div>
+            </div>
+
+            <div class="product-image1"></div>
+            <div class="product-image2"></div>
+            <div class="product-image3">
+              <img
+                data-src="img/works/dna/dna-mockall-high.webp"
+                srcset="
+                  img/works/dna/dna-mockall-high.webp  500w,
+                  img/works/dna/dna-mockall-high.webp 1600w,
+                  img/works/dna/dna-mockall.webp      3000w
+                "
+                class="lazyload"
+                sizes="(max-width: 600px) 90vw, (max-width: 1600px) 80vw, 1000px"
+                alt="project image"
+              />
+            </div>
+          </div>
+        </article>
+
         <button class="content__back unbutton" aria-label="back to portfolio">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0.5 -49.375 132.9 49.86">
             <path
@@ -1222,17 +1358,8 @@
         </button>
       </section>
     </section>
-    <script type="module" src="js/works/index.js"></script>
 
-    <!-- <svg width="45vw" height="33" viewBox="0 0 168 33" fill="none" class="MenuButtonClip_svg__1d0Mk" display="none">
-      <clipPath id="menuButtonClip">
-        <path
-          d="M0.988281 -0.12793H167.016L145.491 25.1077C141.691 29.5627 136.13 32.1288 130.274 32.1288H38.4755C32.7372 32.1288 27.2753 29.664 23.4787 25.3612L0.988281 -0.12793Z"
-          fill="white"
-        ></path>
-      </clipPath>
-    </svg> -->
-    <section class="free-time">
+    <section class="free-time" id="freetime">
       <div class="hola-wrapper">
         <div class="lets-you">
           <div class="same-you">
@@ -1312,7 +1439,7 @@
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M28.8178 89.3725C24.6578 93.4827 18.51 97.5753 12.3081 96.7212C4.37493 95.6295 2.57341 83.4251 3.94104 77.0463C6.61181 64.6116 16.2849 52.1945 25.6164 44.0122C30.5724 39.6673 36.0899 36.0736 41.943 33.1329C47.1438 52.7682 44.5463 73.8327 28.8178 89.3725ZM98.2489 127.104C89.2808 132.081 79.6019 135.782 70.1164 139.751C83.0613 119.935 92.063 96.485 96.8255 73.5334C99.9771 58.3399 104.18 31.2591 86.937 22.3681C76.7816 17.1309 62.8327 21.338 52.8254 24.6484C50.0564 25.5641 47.3314 26.6103 44.6621 27.7813C41.4666 18.3004 36.4402 9.35811 30.4112 1.43855C29.0011 -0.414772 25.8158 1.41214 27.2479 3.29041C33.1684 11.0676 37.9236 20.0863 40.911 29.5451C31.0181 34.4477 22.0647 41.1743 14.9378 49.6969C7.09993 59.0707 -1.62182 72.3345 0.258851 85.1317C2.08089 97.5342 10.6634 103.914 22.6408 98.3119C36.9503 91.6191 45.4199 73.3925 47.7081 58.563C49.1315 49.3286 48.2578 40.1339 45.7644 31.3398C51.2305 28.9244 56.9371 27.0315 62.7638 25.6947C71.3565 23.7298 82.299 21.4642 89.2515 28.5752C100.95 40.5448 95.3524 64.7539 91.8622 78.8175C86.5896 100.065 78.0408 121.435 65.757 139.715C63.0511 130.813 60.5709 121.843 57.6421 113.009C56.9033 110.78 53.3633 111.736 54.1095 113.985C57.3885 123.878 60.0901 133.949 63.1991 143.895C63.1933 144.343 63.4 144.742 63.7268 145.044C64.2751 145.693 65.1839 145.838 66.0341 145.461C77.3474 140.442 89.253 136.291 100.099 130.27C102.161 129.127 100.316 125.958 98.2489 127.104Z"
-            fill="#D9302E"
+            fill="#fff"
           />
         </svg>
       </div>
@@ -1367,7 +1494,7 @@
         <span class="this-socials-text">if you like social messages</span>
       </div>
     </section>
-    <section class="wiggle">
+    <section class="wiggle" id="contactme">
       <svg
         width="100%"
         class="wiggle-svg"
@@ -1451,8 +1578,7 @@
       <div class="lets-make">
         <span
           >Let's make <img src="./img/svg/arrow-box.svg" alt="➺" style="height: 100%; width: auto" /><br /><span
-            data-splitting=""
-            class="rotate-i"
+            class="rotate-i split-char"
             >Something epic</span
           >
         </span>
@@ -1511,33 +1637,41 @@
       </div>
       <div class="footer-low-line"></div>
     </section>
-
+    <script src="libs-js/gsap.min.js"></script>
+    <script type="module" src="js/works/index.js"></script>
     <script src="libs-js/split-text.js"></script>
-    <script src="libs-js/imagesloaded.pkgd.js"></script>
-    <script src="call-worker.js"></script>
-    <script src="libs-js/lenis.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/preloader/index.js"></script>
 
-    <script defer type="module" src="js/index.js"></script>
-    <script defer type="module" src="js/preloader/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs-js/splitting-cells.css" />
+    <link rel="stylesheet" type="text/css" href="libs-js/splitting.css" />
+    <script src="libs-js/splitting.min.js"></script>
+
+    <script src="libs-js/scrolltrigger.js"></script>
+    <script type="module" src="js/distort/index.js"></script>
+    <script type="module" src="js/works/index.js"></script>
+
+    <script src="libs-js/lenis.js"></script>
 
     <link href="libs-js/mf.css" rel="stylesheet" />
     <script src="libs-js/mf.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/magnetic.js"></script>
     <script src="js/scrolltoplugin.js"></script>
-    <script defer src="js/main.js"></script>
 
-    <!-- <script type="text/javascript" src="~partytown/partytown.js"></script> -->
-    <!-- 
-    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-F0NF6J8B0H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-F0NF6J8B0H");
+    <!-- <script type="text/javascript">
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "l8rk70fb17");
     </script> -->
   </body>
 </html>

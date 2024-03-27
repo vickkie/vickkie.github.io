@@ -8,7 +8,8 @@ import { calcWinsize, wrapElements } from "./utils.js";
 // import Splitting from "splitting";
 
 // initialize Splitting
-const splitting = Splitting();
+
+Splitting();
 
 // Calculate the viewport size
 let winsize = calcWinsize();
@@ -21,6 +22,7 @@ let viewcaseChars = document.querySelectorAll(".viewcase .char");
 export class Item {
   constructor(el, itemsArr) {
     this.DOM = { el: el };
+    this.DOM.html = document.querySelector("html");
     this.itemsArr = itemsArr;
     // left/right(invert) align
     this.invert = this.DOM.el.classList.contains("item--invert");
@@ -241,7 +243,7 @@ export class Item {
     this.isContentOpen = true;
 
     // scroll related
-    document.body.classList.add("oh");
+    this.DOM.html.classList.add("oh");
 
     // added lenis to counter anti scroll behavior
 
@@ -518,7 +520,7 @@ export class Item {
             // scroll related
             this.DOM.contentEl.classList.remove("content__article--open");
             this.DOM.contentEl.classList.remove("lenis");
-            document.body.classList.remove("oh");
+            this.DOM.html.classList.remove("oh");
             // scroll content element to the top
             this.DOM.contentEl.scrollTop = 0;
           },

@@ -1,15 +1,10 @@
 import { preloadImages, abibae } from "./utils.js";
-// import { Cursor } from './cursor.js';
 import { Item } from "./item.js";
 
 // Preload images and fonts
 Promise.all([preloadImages(".item__img, .content__img")]).then(() => {
-  // remove loader (loading class)
-  document.body.classList.remove("loading");
-
-  // initialize custom cursor
   abibae();
-  // const cursor = (document.querySelector('.cursor-round'));
+  document.body.classList.remove("loading");
 
   let itemsArr = [];
   [...document.querySelectorAll(".items > .item")].forEach((item) => itemsArr.push(new Item(item, itemsArr)));

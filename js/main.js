@@ -1,7 +1,40 @@
+//Pre defination
+
+let select = (e) => document.querySelector(e);
+let selectAll = (e) => document.querySelectorAll(e);
+
+// Group 0: service worker
+// main.js
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./offline-uzitrake.js")
+      //  .then(reg=>
+      //   // console.log('serviceWorker')
+      //   )
+      .catch((err) => console.log("Error:", err));
+  });
+}
+
+// // Call the split text to transform the splittext gsap texts to spans of chars
+
+gsap.registerPlugin(SplitText);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const splitchars = selectAll(".split-char");
+
+  splitchars.forEach((splitchar) => {
+    new SplitText(splitchar, {
+      type: "chars",
+      charsClass: "char",
+    });
+  });
+});
+
 //Group 1; code to update time
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
-    let time = document.querySelector(".time");
+    let time = select(".time");
     function updateTime() {
       var date = new Date();
       time.innerHTML = date.toTimeString().substr(0, 5);
@@ -12,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 
     //Group 2; code to open menu
-    let openMenu = document.querySelector(".button-menu");
-    let closeMenu = document.querySelector(".button-close");
-    let menuholders = document.querySelectorAll(".menu-will-open");
-    let myCursor = document.querySelector(".mf-cursor");
+    let openMenu = select(".button-menu");
+    let closeMenu = select(".button-close");
+    let menuholders = selectAll(".menu-will-open");
+    let myCursor = select(".mf-cursor");
 
     menuholders.forEach((body) => {
       openMenu.addEventListener("click", () => {
@@ -95,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return afterPseudo;
       }
 
-      document.querySelectorAll("[line-triggerX]").forEach(function (element) {
+      selectAll("[line-triggerX]").forEach(function (element) {
         const lineTrigger = element.getAttribute("line-triggerX");
 
         const linetimeline = lineTimeline(element);
@@ -134,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return afterPseudoY;
       }
 
-      document.querySelectorAll("[line-triggerY]").forEach(function (element) {
+      selectAll("[line-triggerY]").forEach(function (element) {
         const lineyTrigger = element.getAttribute("line-triggerY");
 
         const lineytimeline = lineyTimeline(element);
@@ -179,13 +212,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Group 6 : folding of text from opaCITY AnimaTION
 
-    const fx28Titles = [...document.querySelectorAll("[data-splitting][data-effect28]")];
+    const fx28Titles = [...selectAll("[data-effect28]")];
 
     if (fx28Titles) {
       gsap.registerPlugin(ScrollTrigger);
       gsap.registerPlugin(SplitText);
 
-      let title = new SplitText("[data-splitting][data-effect28]", {
+      let title = new SplitText("[data-effect28]", {
         type: "words,lines,chars",
         wordsClass: "content__title word",
         charsClass: "char",
@@ -253,18 +286,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Group 7; code to change image on menu clicking
 
-    let menGallery = document.querySelector(".menu-gallery"),
-      workMenu = document.querySelector(".menu-work"),
+    let menGallery = select(".menu-gallery"),
+      workMenu = select(".menu-work"),
       gallerypics = menGallery.querySelectorAll(".gallery__item-imginner");
 
     const changeWorkMenu = () => {
       gallerypics.forEach(function (element, i) {
         //  let gallerypic = querySelector(".gallery__item-imginner");
         let imageSet = element.getAttribute("data-image");
-
-        // console.log(element, imageSet, i);
-        // element.style.backgroundImage = `${imageSet}`;
-        // element.setAttribute("style", `background:${imageSet}`);
 
         let timeline = gsap.timeline();
 
@@ -321,11 +350,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Group 8; code to toggle dark-light modes
 
-    let toggleButton = document.querySelector(".knob");
-    let togglePath = document.querySelector(".dark-toggle");
-    let root = document.querySelector("body");
+    let toggleButton = select(".knob");
+    let togglePath = select(".dark-toggle");
+    let root = select("body");
 
-    let xCursor = document.querySelector(".mf-cursor");
+    let xCursor = select(".mf-cursor");
 
     let on = false;
 
@@ -338,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 0.4,
         ease: "expo.in",
       });
-      let heylinkers = document.querySelectorAll(".portfolio-map a");
+      let heylinkers = selectAll(".portfolio-map a");
       heylinkers.forEach((heylinker) => {
         gsap.set(heylinker, {
           color: on ? "#fff" : "#000",
@@ -360,10 +389,10 @@ document.addEventListener("DOMContentLoaded", function () {
       let cursor = new MouseFollower();
     }
 
-    if (document.querySelector(".mf-cursor")) {
+    if (select(".mf-cursor")) {
       function hideMf() {
         if (innerWidth < 768) {
-          document.querySelector(".mf-cursor").style.display = "none";
+          select(".mf-cursor").style.display = "none";
         }
       }
 
@@ -373,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Group 10:  Magnetic effect for elements with class .viewall
 
-    const els = document.querySelectorAll(".magnetic");
+    const els = selectAll(".magnetic");
 
     els.forEach((el) => {
       el.addEventListener("mouseenter", () => {
@@ -398,10 +427,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gsap.registerPlugin(ScrollToPlugin);
 
-    let toContact = document.querySelector(".tocontact"),
-      toworks = document.querySelector(".toworks"),
-      tohero = document.querySelector(".tohero"),
-      toabout = document.querySelector(".toabout");
+    let toContact = select(".tocontact"),
+      toworks = select(".toworks"),
+      tohero = select(".tohero"),
+      toabout = select(".toabout");
 
     toContact.addEventListener("click", () => {
       gsap.to(window, {
@@ -437,8 +466,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Group 12: turn scrollers to white
 
-    let linkers = document.querySelectorAll(".portfolio-map a");
-    let body = document.querySelector("body");
+    let linkers = selectAll(".portfolio-map a");
+    let body = select("body");
     let colordefault = getComputedStyle(body).backgroundColor;
     let colorbackup = getComputedStyle(body).color;
 
@@ -504,7 +533,7 @@ function copyToClipboard(text) {
   if (innerWidth > 767 && document.hasFocus()) {
     navigator.clipboard.writeText(text);
 
-    let copies = document.querySelectorAll(".copy");
+    let copies = selectAll(".copy");
 
     copies.forEach((copy) => {
       copy.innerHTML = "Copied";
@@ -520,7 +549,7 @@ function copyToClipboard(text) {
 const text3d = () => {
   if (innerWidth > 767) {
     gsap.registerPlugin(ScrollTrigger);
-    const fx19Titles = [...document.querySelectorAll("[data-splitting][data-effect19]")];
+    const fx19Titles = [...selectAll("[data-effect19]")];
 
     fx19Titles.forEach((title) => {
       const chars = title.querySelectorAll(".char");
@@ -593,25 +622,25 @@ if (innerWidth > 767) {
 }
 
 //Group 15: lets rotate some i's in the footer
+document.addEventListener("DOMContentLoaded", () => {
+  let chars = [...selectAll(".rotate-i .char")];
 
-let chars = [...document.querySelectorAll(".rotate-i .char")];
+  // Here we're creating a timeline that we can use
+  const lettertl = gsap.timeline({
+    repeat: -1,
+    duration: 2,
+    delay: 3,
+    yoyo: true,
+  });
 
-// Here we're creating a timeline that we can use
-const lettertl = gsap.timeline({
-  repeat: -1,
-  duration: 2,
-  delay: 3,
-  yoyo: true,
+  lettertl.to(chars[6], { rotation: 360 });
+  lettertl.to(chars[11], { rotation: 360 });
 });
-
-lettertl.to(chars[6], { rotation: 360 });
-lettertl.to(chars[11], { rotation: 360 });
-
 //use the defaults
 
-let emailbox = document.querySelector(".email-box");
+let emailbox = select(".email-box");
 
-// Group 13: darkmode if user browser prefers
+//  Group 13: darkmode if user browser prefers
 
 // if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
 //   // User prefers dark mode, add the dark-mode class to the body element

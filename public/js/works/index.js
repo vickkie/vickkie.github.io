@@ -1,1 +1,0 @@
-import{preloadImages,abibae}from"./utils.js";import{Item}from"./item.js";Promise.all([preloadImages(".item__img, .content__img")]).then((()=>{document.body.classList.remove("loading"),abibae();let e=[];[...document.querySelectorAll(".items > .item")].forEach((t=>e.push(new Item(t,e)))),[...document.querySelectorAll("a, .unbutton")].forEach((e=>{}))}));
