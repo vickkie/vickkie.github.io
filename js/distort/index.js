@@ -1,12 +1,9 @@
 import { Cursor } from "./cursor.js";
 import { MenuItem } from "./menuItem.js";
 
-// initialize Splitting
-const splitting = Splitting();
-
 gsap.registerPlugin(SplitText);
 document.addEventListener("DOMContentLoaded", () => {
-  const splitchars = document.querySelectorAll(".split-char-title");
+  const splitchars = document.querySelectorAll(".split-char");
 
   splitchars.forEach((splitchar) => {
     new SplitText(splitchar, {

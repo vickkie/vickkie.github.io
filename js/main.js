@@ -16,21 +16,6 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// // Call the split text to transform the splittext gsap texts to spans of chars
-
-gsap.registerPlugin(SplitText);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const splitchars = selectAll(".split-char");
-
-  splitchars.forEach((splitchar) => {
-    new SplitText(splitchar, {
-      type: "chars",
-      charsClass: "char",
-    });
-  });
-});
-
 //Group 1; code to update time
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
