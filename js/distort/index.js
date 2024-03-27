@@ -5,9 +5,8 @@ import { MenuItem } from "./menuItem.js";
 const splitting = Splitting();
 
 gsap.registerPlugin(SplitText);
-
 document.addEventListener("DOMContentLoaded", () => {
-  const splitchars = document.querySelectorAll(".split-char");
+  const splitchars = document.querySelectorAll(".split-char-title");
 
   splitchars.forEach((splitchar) => {
     new SplitText(splitchar, {

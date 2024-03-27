@@ -16,22 +16,20 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// // Call the split text to transform the data-splitting texts to spans of chars
+// // Call the split text to transform the splittext gsap texts to spans of chars
 
-// this has been commented out because it is not needed anymore. defined in distort index js
+gsap.registerPlugin(SplitText);
 
-// gsap.registerPlugin(SplitText);
+document.addEventListener("DOMContentLoaded", () => {
+  const splitchars = selectAll(".split-char");
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const splitchars = selectAll(".split-char");
-
-//   splitchars.forEach((splitchar) => {
-//     new SplitText(splitchar, {
-//       type: "chars",
-//       charsClass: "char",
-//     });
-//   });
-// });
+  splitchars.forEach((splitchar) => {
+    new SplitText(splitchar, {
+      type: "chars",
+      charsClass: "char",
+    });
+  });
+});
 
 //Group 1; code to update time
 document.addEventListener("DOMContentLoaded", function () {
