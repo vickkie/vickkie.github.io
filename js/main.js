@@ -16,17 +16,22 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-// // Call the splittingjs to transform the data-splitting texts to spans of chars
-// Splitting();
+// // Call the split text to transform the data-splitting texts to spans of chars
 
-const splitchars = document.querySelectorAll(".split-char");
+// this has been commented out because it is not needed anymore. defined in distort index js
 
-splitchars.forEach((splitchar) => {
-  new SplitText(splitchar, {
-    type: "chars",
-    charsClass: "char",
-  });
-});
+// gsap.registerPlugin(SplitText);
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const splitchars = selectAll(".split-char");
+
+//   splitchars.forEach((splitchar) => {
+//     new SplitText(splitchar, {
+//       type: "chars",
+//       charsClass: "char",
+//     });
+//   });
+// });
 
 //Group 1; code to update time
 document.addEventListener("DOMContentLoaded", function () {
@@ -619,20 +624,20 @@ if (innerWidth > 767) {
 }
 
 //Group 15: lets rotate some i's in the footer
+document.addEventListener("DOMContentLoaded", () => {
+  let chars = [...selectAll(".rotate-i .char")];
 
-let chars = [...selectAll(".rotate-i .char")];
+  // Here we're creating a timeline that we can use
+  const lettertl = gsap.timeline({
+    repeat: -1,
+    duration: 2,
+    delay: 3,
+    yoyo: true,
+  });
 
-// Here we're creating a timeline that we can use
-const lettertl = gsap.timeline({
-  repeat: -1,
-  duration: 2,
-  delay: 3,
-  yoyo: true,
+  lettertl.to(chars[6], { rotation: 360 });
+  lettertl.to(chars[11], { rotation: 360 });
 });
-
-lettertl.to(chars[6], { rotation: 360 });
-lettertl.to(chars[11], { rotation: 360 });
-
 //use the defaults
 
 let emailbox = select(".email-box");

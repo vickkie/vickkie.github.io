@@ -4,6 +4,19 @@ import { MenuItem } from "./menuItem.js";
 // initialize Splitting
 const splitting = Splitting();
 
+gsap.registerPlugin(SplitText);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const splitchars = document.querySelectorAll(".split-char");
+
+  splitchars.forEach((splitchar) => {
+    new SplitText(splitchar, {
+      type: "chars",
+      charsClass: "char",
+    });
+  });
+});
+
 // initialize custom cursor
 const cursor = new Cursor(document.querySelector(".cursor"));
 
